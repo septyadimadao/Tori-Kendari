@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Tori Kendari</title>
+<title>Tori Kendari · Kue Tori Ketan khas Toraja</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Tori Kendari, kue tori ketan khas Toraja dan deppa tori di Kendari. Diproduksi setiap hari, kemasan pouch 300 g, 500 g dan 1 kg. Pesan mudah lewat WhatsApp.">
-<meta property="og:title" content="Tori Kendari · Kue Tori Ketan Khas Toraja">
-<meta property="og:description" content="Kue tori ketan khas Toraja, diproduksi setiap hari. Mulai 30 ribu, 45 ribu/500 g, 85 ribu/kg. Pesan lewat WhatsApp.">
+<meta name="description" content="Kue tori ketan khas Toraja dan deppa tori di Kendari. Diproduksi setiap hari, kemasan pouch 300 g, 500 g dan 1 kg. Pesan lewat WhatsApp.">
+<meta property="og:title" content="Tori Kendari · Kue Tori Ketan khas Toraja">
+<meta property="og:description" content="Kue tori ketan khas Toraja dan deppa tori di Kendari. Diproduksi setiap hari, kemasan pouch 300 g, 500 g dan 1 kg. Pesan lewat WhatsApp.">
 <meta name="theme-color" content="#1C110B">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="index">
+
 
 <!-- Ilustrasi (dipakai ulang lewat <use>) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -87,15 +88,16 @@
 
 <header class="top" id="top">
   <div class="wrap bar">
-    <a class="brand" href="#beranda" aria-label="Tori Kendari, ke beranda">
+    <a class="brand" href="index.html" aria-label="Tori Kendari, ke beranda">
       <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
       <span><span class="brand-name">Tori Kendari</span><span class="brand-sub">Kue Tori Ketan khas Toraja</span></span>
     </a>
     <nav class="links" aria-label="Navigasi utama">
-      <a href="#menu">Produk</a>
-      <a href="#hitung">Hitung Pesanan</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#lokasi">Lokasi</a>
+      <a href="index.html" data-page="index">Beranda</a>
+      <a href="produk.html" data-page="produk">Produk</a>
+      <a href="pesan.html" data-page="pesan">Hitung Pesanan</a>
+      <a href="tentang.html" data-page="tentang">Tentang</a>
+      <a href="lokasi.html" data-page="lokasi">Lokasi</a>
     </nav>
     <div class="top-actions">
       <a class="btn btn-rasp btn-sm wa-link" href="#" target="_blank" rel="noopener">
@@ -107,7 +109,7 @@
     </div>
   </div>
   <nav class="wrap mnav" id="mnav" aria-label="Menu ponsel">
-    <a href="#menu">Produk</a><a href="#hitung">Hitung Pesanan</a><a href="#tentang">Tentang</a><a href="#lokasi">Lokasi</a>
+    <a href="index.html" data-page="index">Beranda</a><a href="produk.html" data-page="produk">Produk</a><a href="pesan.html" data-page="pesan">Hitung Pesanan</a><a href="tentang.html" data-page="tentang">Tentang</a><a href="lokasi.html" data-page="lokasi">Lokasi</a>
   </nav>
 </header>
 
@@ -119,10 +121,10 @@
       <h1>Renyah, manis, <span class="swash">khas Toraja.</span></h1>
       <p class="lead">Kue tori ketan bertabur wijen dan deppa tori, camilan khas Toraja yang kini bisa Anda dapatkan di Kendari. Diproduksi setiap hari, jadi yang sampai di tangan Anda selalu baru.</p>
       <div class="ctas">
-        <a class="btn btn-rasp" href="#menu">
+        <a class="btn btn-rasp" href="produk.html">
           <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Lihat produk
         </a>
-        <a class="btn btn-ghost" href="#hitung">Hitung pesanan</a>
+        <a class="btn btn-ghost" href="pesan.html">Hitung pesanan</a>
       </div>
       <div class="oven">
         <span class="oven-ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
@@ -169,119 +171,17 @@
   <div class="ribbon-track" id="ribbon"></div>
 </div>
 
-<section class="menu" id="menu">
+<section class="explore">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Produk kami</span>
-      <h2>Pilih kemasan <span class="rasp">favorit Anda.</span></h2>
-      <p class="lead">Ketuk tombol + untuk memasukkan ke kotak pesanan. Pesanan tersusun otomatis dan dikirim lewat WhatsApp.</p>
+      <span class="eyebrow">Jelajahi</span>
+      <h2>Semua yang perlu Anda tahu, <span class="rasp">di halamannya masing-masing.</span></h2>
     </div>
-    <div class="grid grid-produk" id="grid"></div>
-  </div>
-</section>
-
-<section class="builder" id="hitung">
-  <div class="wrap b-grid">
-    <div class="b-preview reveal" aria-hidden="true">
-      <span class="sum" id="bPrice">Rp 85.000</span>
-      <svg viewBox="0 0 120 120" class="b-cake" id="bArt"><use href="#i-kotak"/></svg>
-      <span class="b-weight" id="bWeight">1 kg</span>
-    </div>
-
-    <form class="b-form reveal" id="builder" novalidate>
-      <div class="sec-head" style="margin-bottom:0">
-        <span class="eyebrow">Hitung pesanan</span>
-        <h2>Butuh berapa banyak?</h2>
-        <p class="lead">Untuk arisan, syukuran, oleh-oleh atau stok camilan di rumah. Pilih kemasan dan jumlahnya, totalnya langsung terhitung.</p>
-      </div>
-      <fieldset>
-        <legend>Kemasan</legend>
-        <div class="opts" id="optKemasan"></div>
-      </fieldset>
-      <div class="field">
-        <label for="bJumlah">Jumlah kemasan</label>
-        <div class="qtyctl big">
-          <button type="button" id="bMin" aria-label="Kurangi jumlah">−</button>
-          <input id="bJumlah" type="number" min="1" max="200" value="1" inputmode="numeric">
-          <button type="button" id="bPlus" aria-label="Tambah jumlah">+</button>
-        </div>
-        <span class="hint">Untuk pesanan dalam jumlah banyak, sebaiknya pesan sehari sebelumnya.</span>
-      </div>
-      <div class="ctas">
-        <button class="btn btn-rasp" type="submit" id="bAdd">
-          <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Masukkan ke kotak pesanan
-        </button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<section id="tentang">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="sec-head reveal" style="margin-bottom:0">
-        <span class="eyebrow">Tentang kue tori</span>
-        <h2>Camilan ketan dari Toraja, <span class="rasp">dibuat di Kendari.</span></h2>
-        <p class="lead">Kue tori adalah camilan ketan khas Toraja yang berbentuk batang kecil memanjang dan bertabur wijen. Teksturnya renyah dengan rasa manis legit, cocok jadi teman minum teh atau kopi, suguhan tamu, dan oleh-oleh untuk keluarga.</p>
-        <p class="hand rasp" style="font-size:2.2rem">Diproduksi setiap hari.</p>
-      </div>
-      <div class="feats reveal">
-        <div class="feat"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><h3>Selalu baru</h3><p>Kue dibuat setiap hari, bukan stok lama.</p></div>
-        <div class="feat"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><h3>Khas Toraja</h3><p>Ketan dan taburan wijen, rasa tradisional yang dikenal banyak orang.</p></div>
-        <div class="feat"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5Z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><h3>Banyak pilihan kemasan</h3><p>Pouch 300 g, 500 g dan 1 kg, rapi dan mudah dibawa.</p></div>
-        <div class="feat"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M12 8v13M3 12h18M7.5 8a2.5 2.5 0 0 1 0-5C9.5 3 12 8 12 8s2.5-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></span><h3>Untuk oleh-oleh</h3><p>Bisa pesan dalam jumlah banyak untuk acara dan buah tangan.</p></div>
-      </div>
-    </div>
-    <div class="steps reveal" aria-label="Cara memesan">
-      <div class="step"><h3>Pilih kemasan</h3><p>Tambahkan kemasan yang Anda mau ke kotak pesanan.</p></div>
-      <div class="step"><h3>Kirim lewat WhatsApp</h3><p>Isi nama dan tanggal, pesanan tersusun otomatis. Tinggal tekan kirim.</p></div>
-      <div class="step"><h3>Ambil atau diantar</h3><p>Kami konfirmasi total dan jadwal, lalu pesanan siap diambil atau diantar.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="reviews" id="ulasan" hidden>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Kata pelanggan</span>
-      <h2>Yang sudah mencicipi.</h2>
-    </div>
-    <div class="rv-track" id="rvTrack" tabindex="0" aria-label="Ulasan pelanggan, geser untuk melihat"></div>
-  </div>
-</section>
-
-<section id="lokasi">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Mampir ke toko</span>
-      <h2>Ambil langsung di <span class="rasp">Bumi Mekar Residence.</span></h2>
-    </div>
-    <div class="loc-grid reveal">
-      <div class="loc-card">
-        <div>
-          <h3>Alamat</h3>
-          <p class="lead" id="alamat" style="margin-top:6px"></p>
-        </div>
-        <table class="hours" aria-label="Jam buka">
-          <tbody id="hours"></tbody>
-        </table>
-        <div class="copyrow">
-          <span class="hint" style="width:100%">Nomor WhatsApp</span>
-          <code id="waNum"></code>
-          <button class="btn btn-ghost btn-sm" type="button" id="copyWa">Salin nomor</button>
-        </div>
-        <div class="copyrow">
-          <span class="hint" style="width:100%">Email</span>
-          <code id="email" class="small"></code>
-        </div>
-      </div>
-      <div class="map-art">
-        <div class="pin">
-          <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-          <b>Jl. Mekar Indah, Kendari</b>
-          <a class="btn btn-rasp btn-sm" id="mapsLink" href="#" target="_blank" rel="noopener">Buka di Google Maps</a>
-        </div>
-      </div>
+    <div class="ex-grid reveal">
+      <a class="ex-card" href="produk.html"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><h3>Produk</h3><p>Kue tori ketan, pouch 300 g sampai 1 kg, dan deppa tori. Lengkap dengan harga.</p><span class="ex-link">Lihat produk →</span></a>
+      <a class="ex-card" href="pesan.html"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h3M8 18h3M15 14h1M15 18h1"/></svg></span><h3>Hitung Pesanan</h3><p>Pilih kemasan dan jumlah, totalnya langsung terhitung, lalu kirim lewat WhatsApp.</p><span class="ex-link">Mulai pesan →</span></a>
+      <a class="ex-card" href="tentang.html"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><h3>Tentang</h3><p>Mengenal kue tori, camilan ketan khas Toraja, dan cara menyimpannya.</p><span class="ex-link">Baca selengkapnya →</span></a>
+      <a class="ex-card" href="lokasi.html"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span><h3>Lokasi &amp; Jam Buka</h3><p>Jl. Mekar Indah, Bumi Mekar Residence, Kendari. Buka 09.00–20.00 WITA.</p><span class="ex-link">Lihat lokasi →</span></a>
     </div>
   </div>
 </section>
@@ -294,7 +194,7 @@
     <p class="lead">Ceritakan berapa kemasan yang dibutuhkan dan kapan diambil. Kami bantu siapkan.</p>
     <div class="ctas" style="justify-content:center">
       <a class="btn btn-rasp wa-link" href="#" target="_blank" rel="noopener"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Tanya lewat WhatsApp</a>
-      <a class="btn btn-ghost" href="#menu">Lihat produk</a>
+      <a class="btn btn-ghost" href="produk.html">Lihat produk</a>
     </div>
     <div class="socials">
       <a id="igLink" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg class="lc" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></a>

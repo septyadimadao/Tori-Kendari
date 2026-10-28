@@ -47,19 +47,28 @@ function wita(){
 const toMin = s => { const [h, m] = s.split(":").map(Number); return h * 60 + m; };
 const fmtJam = s => s.replace(":", ".");
 
+/* setiap halaman dibuka dari paling atas */
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+const keAtas = () => { if (!location.hash) scrollTo({top:0, left:0, behavior:"instant"}); };
+keAtas(); addEventListener("pageshow", keAtas);
+
+const isi = (s, fn) => { const el = $(s); if (el) fn(el); };
+
 /* tautan umum */
 $$(".wa-link").forEach(a => a.href = waBase + "?text=" + encodeURIComponent("Halo " + DATA.nama + ", saya mau tanya soal kue tori."));
-$("#waNum").textContent = "+" + DATA.wa.replace(/^(\d{2})(\d{3})(\d{4})(\d+)$/, "$1 $2-$3-$4");
-$("#alamat").textContent = DATA.alamat;
-$("#email").textContent = DATA.email;
-$("#mapsLink").href = DATA.maps;
-$("#igLink").href = DATA.instagram;
-$("#year").textContent = new Date().getFullYear();
-$("#copyWa").addEventListener("click", e => {
+const waTampil = "+" + DATA.wa.replace(/^(\d{2})(\d{3})(\d{4})(\d+)$/, "$1 $2-$3-$4");
+$$(".wa-num").forEach(el => el.textContent = waTampil);
+isi("#waNum", el => el.textContent = waTampil);
+isi("#alamat", el => el.textContent = DATA.alamat);
+isi("#email", el => el.textContent = DATA.email);
+isi("#mapsLink", el => el.href = DATA.maps);
+isi("#igLink", el => el.href = DATA.instagram);
+isi("#year", el => el.textContent = new Date().getFullYear());
+isi("#copyWa", el => el.addEventListener("click", e => {
   const b = e.currentTarget, done = () => { b.textContent = "Tersalin"; setTimeout(() => b.textContent = "Salin nomor", 1800); };
   const sel = () => { const r = document.createRange(); r.selectNodeContents($("#waNum")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
   try { navigator.clipboard.writeText("+" + DATA.wa).then(done, sel); } catch(err){ sel(); }
-});
+}));
 
 /* header: menu ponsel & bayangan saat scroll */
 (() => {
@@ -68,17 +77,16 @@ $("#copyWa").addEventListener("click", e => {
   $$("#mnav a").forEach(a => a.addEventListener("click", () => { top.classList.remove("open"); btn.setAttribute("aria-expanded", false); }));
   const onScroll = () => top.classList.toggle("scrolled", scrollY > 8);
   addEventListener("scroll", onScroll, {passive:true}); onScroll();
-  const links = $$(".links a");
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
-  }), {rootMargin:"-45% 0px -50% 0px"});
-  ["menu","hitung","tentang","lokasi"].forEach(id => io.observe(document.getElementById(id)));
+  // tandai menu halaman yang sedang dibuka
+  const page = document.body.dataset.page;
+  $$(".links a, .mnav a").forEach(a => { if (a.dataset.page === page) { a.classList.add("on"); a.setAttribute("aria-current", "page"); } });
 })();
 
 /* status buka */
 (() => {
   const t = wita(), d = t.getDay(), m = t.getHours() * 60 + t.getMinutes();
   const j = DATA.jam[d], st = $("#status"), tx = $("#statusText");
+  if (!st) return;
   if (j && m >= toMin(j[0]) && m < toMin(j[1])) { st.classList.add("buka"); tx.textContent = "Buka sekarang · tutup " + fmtJam(j[1]) + " WITA"; return; }
   let nm = j && m < toMin(j[0]) ? j[0] : null, label = "hari ini";
   if (!nm) { for (let i = 1; i <= 7; i++) { const k = (d + i) % 7; if (DATA.jam[k]) { nm = DATA.jam[k][0]; label = i === 1 ? "besok" : HARI[k]; break; } } }
@@ -87,6 +95,7 @@ $("#copyWa").addEventListener("click", e => {
 
 /* jam buka: hari dengan jam sama digabung */
 (() => {
+  if (!$("#hours")) return;
   const today = wita().getDay(), order = [1,2,3,4,5,6,0];
   const sama = order.every(i => String(DATA.jam[i]) === String(DATA.jam[1]));
   if (sama && DATA.jam[1]) {
@@ -101,6 +110,7 @@ $("#copyWa").addEventListener("click", e => {
 
 /* pita berjalan */
 (() => {
+  if (!$("#ribbon")) return;
   const kata = ["Kue Tori Ketan","Deppa Tori","Khas Toraja","Bertabur Wijen","Diproduksi Setiap Hari","Pouch 300 g · Rp 30.000","500 g · Rp 45.000","1 kg · Rp 85.000","Oleh-oleh dari Kendari"];
   const html = kata.map(k => "<span>" + esc(k) + "</span>").join("");
   $("#ribbon").innerHTML = html + html;
@@ -165,6 +175,7 @@ const shake = () => { const f = $("#cartFab"); f.classList.remove("shake"); void
 
 /* produk */
 function renderMenu(){
+  if (!$("#grid")) return;
   $("#grid").innerHTML = MENU.map((m, i) =>
     '<article class="item" style="animation-delay:' + i * 60 + 'ms">' +
       '<div class="item-art">' + (m.badge ? '<span class="badge">' + esc(m.badge) + "</span>" : "") +
@@ -186,8 +197,14 @@ function renderMenuQty(){
 }
 renderMenu();
 
+/* tabel harga (halaman produk) */
+isi("#priceTable", el => {
+  el.innerHTML = MENU.map(m => "<tr><td>" + esc(m.nama) + "</td><td>" + esc(m.unit.replace("/ ", "").replace(/^kg$/, "1 kg")) + "</td><td>" + rp(m.harga) + "</td></tr>").join("");
+});
+
 /* hitung pesanan */
 (() => {
+  if (!$("#builder")) return;
   $("#optKemasan").innerHTML = MENU.map((m, i) =>
     '<label class="opt"><input type="radio" name="kemasan" value="' + i + '"' + (m.id === "t1kg" ? " checked" : "") + "><span>" + esc(m.label) + " · " + rp(m.harga) + "</span></label>").join("");
   const f = $("#builder"), jml = $("#bJumlah");
@@ -219,7 +236,7 @@ renderMenu();
 
 /* ulasan: tampil hanya jika ada ulasan asli */
 (() => {
-  if (!ULASAN.length) return;
+  if (!ULASAN.length || !$("#ulasan")) return;
   $("#ulasan").hidden = false;
   const C = ["#E9C46A","#A8C686","#E7B86C","#D9AE5B"];
   $("#rvTrack").innerHTML = ULASAN.map((u, i) =>

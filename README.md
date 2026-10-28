@@ -2,13 +2,17 @@
 
 Website satu halaman bertema cokelat-emas, tanpa framework. Cukup unggah file ke hosting statis (GitHub Pages, Netlify, cPanel).
 
-## Isi halaman
-1. **Beranda**: status buka/tutup otomatis (WITA), ilustrasi kue tori beranimasi.
-2. **Produk**: 6 produk (Kue Tori, pouch, Deppa Tori), plus kartu pesanan banyak / oleh-oleh.
-3. **Hitung pesanan**: pilih kemasan dan jumlah, total langsung terhitung.
-4. **Tentang kue tori** & cara pesan.
-5. **Lokasi & jam buka**, nomor WA, email.
-6. **Kotak pesanan**: semua pesanan tersusun otomatis jadi pesan WhatsApp.
+## Halaman
+Setiap menu punya halaman sendiri dan selalu terbuka dari paling atas.
+| File | Isi |
+|---|---|
+| `index.html` | Beranda: status buka/tutup (WITA), ilustrasi kue tori beranimasi, kartu menuju halaman lain |
+| `produk.html` | Semua produk dengan tombol +, plus tabel daftar harga |
+| `pesan.html` | Hitung pesanan per kemasan dan cara pesan |
+| `tentang.html` | Tentang kue tori dan tips menyimpan |
+| `lokasi.html` | Alamat, jam buka, WhatsApp, email |
+
+Kotak pesanan (tombol kanan bawah) ada di semua halaman dan isinya tetap terbawa saat pindah halaman. Header, footer dan kotak pesanan ada di setiap file HTML, jadi kalau mengubahnya, ubah di kelima file.
 
 ## Data (bagian atas `app.js`)
 | Data | Isi sekarang | Lokasi |
