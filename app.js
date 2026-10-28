@@ -14,8 +14,13 @@ const DATA = {
 
 // Produk. foto: isi dengan nama file di folder foto/, misalnya "foto/tori-1kg.jpg". Kosong = pakai ilustrasi
 const MENU = [
-  {id:"t500", nama:"Kue Tori Ketan khas Toraja · 500 g", desc:"Kue tori ketan bertabur wijen, kemasan setengah kilo.", harga:45000, unit:"/ 500 g", label:"500 gram", berat:.5, ikon:"tori", foto:"", badge:"Khas Toraja"},
-  {id:"t1kg", nama:"Kue Tori · 1 kg", desc:"Kue tori kemasan 1 kg, kuenya diproduksi setiap hari.", harga:85000, unit:"/ kg", label:"1 kg", berat:1, ikon:"kotak", foto:"", badge:"Lebih hemat"}
+  {id:"t500", nama:"Kue Tori Ketan khas Toraja", desc:"Kue tori ketan bertabur wijen. 85 ribu/kg, 45 ribu/500 gram.", harga:45000, unit:"/ 500 g", label:"Kue Tori 500 g", berat:.5, ikon:"tori", foto:"", badge:"Khas Toraja"},
+  {id:"t1kg", nama:"Kue Tori uk 1 kg", desc:"Kue tori kemasan 1 kg, kuenya diproduksi setiap hari.", harga:85000, unit:"/ kg", label:"Kue Tori 1 kg", berat:1, ikon:"kotak", foto:"", badge:"Lebih hemat"},
+  {id:"p1kg", nama:"Kue Tori kemasan pouch 1 kg", desc:"Kemasan pouch 1 kg, rapat dan praktis untuk oleh-oleh.", harga:85000, unit:"/ pouch 1 kg", label:"Pouch 1 kg", berat:1, ikon:"pouch", foto:"", badge:"Pouch"},
+  {id:"p500", nama:"Kue Tori kemasan pouch 500 g", desc:"Kemasan pouch setengah kilo.", harga:45000, unit:"/ pouch 500 g", label:"Pouch 500 g", berat:.5, ikon:"pouch", foto:""},
+  {id:"p300", nama:"Kue Tori pouch 300 g", desc:"Pouch kecil 300 gram, pas untuk camilan sendiri.", harga:30000, unit:"/ pouch 300 g", label:"Pouch 300 g", berat:.3, ikon:"pouch", foto:"", badge:"Ukuran kecil"},
+  {id:"dt350", nama:"Deppa Tori", desc:"Kue tradisional deppa tori, kemasan 350 gram.", harga:30000, unit:"/ 350 g", label:"Deppa Tori 350 g", berat:.35, ikon:"deppa", foto:"", badge:"Tradisional"},
+  {id:"cumi", nama:"Baby Cumi", desc:"Baby cumi kering dalam kemasan.", harga:75000, unit:"/ bungkus", label:"Baby Cumi", berat:0, ikon:"cumi", foto:"", badge:"Lainnya"}
 ];
 
 // Ulasan pelanggan asli. Bagian ulasan tampil otomatis jika daftar ini diisi
@@ -97,7 +102,7 @@ $("#copyWa").addEventListener("click", e => {
 
 /* pita berjalan */
 (() => {
-  const kata = ["Kue Tori Ketan","Khas Toraja","Bertabur Wijen","Diproduksi Setiap Hari","500 g · Rp 45.000","1 kg · Rp 85.000","Oleh-oleh dari Kendari"];
+  const kata = ["Kue Tori Ketan","Deppa Tori","Khas Toraja","Bertabur Wijen","Diproduksi Setiap Hari","Pouch 300 g · Rp 30.000","500 g · Rp 45.000","1 kg · Rp 85.000","Baby Cumi","Oleh-oleh dari Kendari"];
   const html = kata.map(k => "<span>" + esc(k) + "</span>").join("");
   $("#ribbon").innerHTML = html + html;
 })();
@@ -106,7 +111,7 @@ $("#copyWa").addEventListener("click", e => {
 const cart = store.get("tori-cart") || {};
 const cartItems = () => Object.entries(cart).filter(([, q]) => q > 0).map(([id, q]) => {
   const m = MENU.find(x => x.id === id);
-  return m ? {id, q, nama:m.nama, harga:m.harga, unit:m.unit, berat:m.berat} : null;
+  return m ? {id, q, nama:m.nama, label:m.label, harga:m.harga, unit:m.unit, berat:m.berat} : null;
 }).filter(Boolean);
 function setQty(id, q){
   cart[id] = Math.max(0, Math.min(500, q));
@@ -128,7 +133,7 @@ function renderCart(){
 function refreshWa(){
   const v = id => $("#" + id).value.trim(), items = cartItems();
   const lines = ["Halo " + DATA.nama + ", saya mau pesan:", ""];
-  items.forEach(i => lines.push("• " + i.q + "x " + i.nama + " = " + rp(i.q * i.harga)));
+  items.forEach(i => lines.push("• " + i.q + "x " + i.label + " = " + rp(i.q * i.harga)));
   if (!items.length) lines.push("(belum memilih produk)");
   lines.push("", "Perkiraan total: " + rp(items.reduce((a, b) => a + b.q * b.harga, 0)), "",
     "Nama: " + (v("oNama") || "-"),
@@ -185,7 +190,7 @@ renderMenu();
 /* hitung pesanan */
 (() => {
   $("#optKemasan").innerHTML = MENU.map((m, i) =>
-    '<label class="opt"><input type="radio" name="kemasan" value="' + i + '"' + (i === MENU.length - 1 ? " checked" : "") + "><span>" + esc(m.label) + " · " + rp(m.harga) + "</span></label>").join("");
+    '<label class="opt"><input type="radio" name="kemasan" value="' + i + '"' + (m.id === "t1kg" ? " checked" : "") + "><span>" + esc(m.label) + " · " + rp(m.harga) + "</span></label>").join("");
   const f = $("#builder"), jml = $("#bJumlah");
   const state = () => {
     const m = MENU[Number(f.querySelector('input[name="kemasan"]:checked').value)];
@@ -195,7 +200,7 @@ renderMenu();
   function draw(){
     const {m, q} = state(), kg = m.berat * q;
     $("#bPrice").textContent = rp(m.harga * q);
-    $("#bWeight").textContent = q + " × " + m.label + " = " + kg.toLocaleString("id-ID") + " kg";
+    $("#bWeight").textContent = q + " × " + m.label + (kg ? " = " + kg.toLocaleString("id-ID") + " kg" : "");
     $("#bArt").innerHTML = '<use href="#i-' + m.ikon + '"/>';
     const art = $("#bArt"); art.classList.remove("pulse"); void art.offsetWidth; art.classList.add("pulse");
   }
