@@ -1,40 +1,34 @@
-# Website Depatori · Toko Kue & Roti Kendari
+# Website Tori Kendari · Kue Tori Ketan khas Toraja
 
-Website satu halaman bertema cokelat-emas, tanpa framework. Cukup unggah 3 file (`index.html`, `style.css`, `app.js`) ke hosting statis mana pun (Netlify, Vercel, GitHub Pages, cPanel).
+Website satu halaman bertema cokelat-emas, tanpa framework. Cukup unggah file ke hosting statis (GitHub Pages, Netlify, cPanel).
 
 ## Isi halaman
-1. **Beranda**: status buka/tutup otomatis (zona WITA), jadwal roti keluar oven, kue animasi (lilin menyala, sprinkle jatuh).
-2. **Pita berjalan** berisi nama-nama kue.
-3. **Etalase menu**: filter kategori, tombol + untuk masuk kotak pesanan.
-4. **Rakit kue ulang tahun**: pilih ukuran, rasa, warna krim, hiasan dan tulisan. Pratinjau & harga berubah langsung.
-5. **Tentang & cara pesan** (3 langkah).
-6. **Ulasan pelanggan** (geser otomatis).
-7. **Lokasi & jam buka** (hari ini disorot).
-8. **Kotak pesanan**: semua pesanan tersusun otomatis jadi pesan WhatsApp.
+1. **Beranda**: status buka/tutup otomatis (WITA), ilustrasi kue tori beranimasi.
+2. **Produk**: Kue Tori 500 g (Rp 45.000) dan 1 kg (Rp 85.000), plus kartu pesanan banyak / oleh-oleh.
+3. **Hitung pesanan**: pilih kemasan dan jumlah, total langsung terhitung.
+4. **Tentang kue tori** & cara pesan.
+5. **Lokasi & jam buka**, nomor WA, email.
+6. **Kotak pesanan**: semua pesanan tersusun otomatis jadi pesan WhatsApp.
 
-## Data yang WAJIB diganti (semua ada di bagian atas `app.js`)
-| Data | Sekarang (contoh) | Lokasi |
+## Data (bagian atas `app.js`)
+| Data | Isi sekarang | Lokasi |
 |---|---|---|
-| Nama toko | `Depatori` (tebakan dari permintaan klien) | `DATA.nama` + teks di `index.html` (cari "Depatori") |
-| Nomor WhatsApp | `6281234929603` (0812-3492-9603, sudah asli) | `DATA.wa` |
-| Alamat | Jl. Contoh Raya No. 12, Kendari | `DATA.alamat` |
-| Link Google Maps | pencarian "Kendari" | `DATA.maps` |
-| Instagram & TikTok | halaman utama | `DATA.instagram`, `DATA.tiktok` |
-| Jam buka | Sen–Sab 07.00–21.00, Min 08.00–20.00 | `DATA.jam` |
-| Jam roti keluar oven | 06.00, 10.00, 14.00 | `DATA.oven` |
-| Menu, deskripsi & harga | 16 produk contoh | `MENU` |
-| Harga kue custom | 16/20/24 cm, tambahan hiasan | `RAKIT` |
-| Ulasan | 4 ulasan **contoh** | `ULASAN`, lalu set `DATA.ulasanContoh = false` |
-| Teks "Tentang" | cerita dapur keluarga (karangan) | bagian `#tentang` di `index.html` |
+| Nama | Tori Kendari | `DATA.nama` + teks di `index.html` |
+| WhatsApp | 0812-3492-9603 | `DATA.wa` |
+| Alamat | Jl. Mekar Indah, Bumi Mekar Residence, Kendari | `DATA.alamat`, `DATA.maps` |
+| Email | yulisal53@gmail.com | `DATA.email` |
+| Instagram | @lisaolshopkendari | `DATA.instagram` |
+| Jam buka | Setiap hari 09.00–20.00 WITA | `DATA.jam` |
+| Produk & harga | 500 g Rp 45.000, 1 kg Rp 85.000 | `MENU` |
+| Ulasan | kosong (bagian ulasan tersembunyi) | `ULASAN` |
 
-## Catatan
-- Gambar kue saat ini berupa ilustrasi. Jika klien punya foto produk, ilustrasi di kartu menu bisa diganti `<img>`.
-- Belum ada logo resmi; ikon cupcake bisa diganti logo klien (simbol `i-mark` di `index.html`).
-- Pesanan tidak tersimpan di server: pembeli diarahkan ke WhatsApp dengan pesan yang sudah terisi.
+## Memasang foto produk
+1. Buat folder `foto/` di repo, unggah foto (misalnya `tori-500g.jpg`, `tori-1kg.jpg`). Ukuran ideal 1200×900 px.
+2. Di `app.js`, isi `foto:"foto/tori-500g.jpg"` pada produk yang sesuai. Ilustrasi otomatis diganti foto.
 
 ## Cara memasang di GitHub Pages
-1. Buat repository baru di github.com (misalnya `depatori-website`), pilih **Public**.
+1. Buat repository baru di github.com (misalnya `tori-kendari`), pilih **Public**.
 2. Klik **Add file → Upload files**, lalu seret semua isi folder ini (`index.html`, `style.css`, `app.js`, `favicon.svg`, `README.md`, `.nojekyll`). Klik **Commit changes**.
 3. Buka **Settings → Pages**. Pada *Source* pilih **Deploy from a branch**, branch **main**, folder **/ (root)**, lalu **Save**.
-4. Tunggu 1–2 menit. Website tampil di `https://<username>.github.io/depatori-website/`.
+4. Tunggu 1–2 menit. Website tampil di `https://<username>.github.io/tori-kendari/`.
 5. Untuk domain sendiri (misalnya `depatori.com`), isi kolom **Custom domain** di halaman yang sama.
