@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Depatori Kendari</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Depatori, toko kue & roti di Kendari. Kue ulang tahun custom, kue tradisional, roti, pastry dan kue kering. Dipanggang setiap pagi, pesan mudah lewat WhatsApp.">
+<meta property="og:title" content="Depatori · Toko Kue & Roti Kendari">
+<meta property="og:description" content="Kue ulang tahun custom, roti hangat, pastry dan kue kering. Pesan lewat WhatsApp.">
+<meta name="theme-color" content="#D63A6A">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Figtree:wght@400;500;600;700;800&family=Shrikhand&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ilustrasi kue (dipakai ulang lewat <use>). Warna bisa diubah per kartu dengan --c1, --c2, --c3 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-bday" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="98" rx="50" ry="8" fill="var(--cream)" opacity=".9"/>
+      <rect x="18" y="52" width="84" height="44" rx="8" fill="var(--c1,#5A2E1E)"/>
+      <rect x="18" y="76" width="84" height="5" fill="var(--c2,#FFF8EE)" opacity=".8"/>
+      <ellipse cx="60" cy="52" rx="42" ry="9" fill="var(--c2,#FFF8EE)"/>
+      <path d="M18 52h84v8c-4 0-4 8-8 8s-4-6-8-6-4 10-8 10-4-8-8-8-4 6-8 6-4-9-8-9-4 7-8 7-4-5-8-5-4 8-8 8-4-6-8-6L18 62z" fill="var(--c2,#FFF8EE)"/>
+      <circle cx="38" cy="47" r="5.5" fill="var(--c3,#E2416B)"/><circle cx="82" cy="47" r="5.5" fill="var(--c3,#E2416B)"/>
+      <rect x="56.5" y="24" width="7" height="22" rx="2" fill="#FFD979"/>
+      <path d="M60 10c4 5 5 8 0 12-5-4-4-7 0-12z" fill="#FF9F2E"/>
+    </symbol>
+    <symbol id="i-slice" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="96" rx="48" ry="8" fill="var(--cream)" opacity=".9"/>
+      <rect x="22" y="40" width="76" height="54" rx="6" fill="var(--c1,#F3C77F)"/>
+      <rect x="22" y="56" width="76" height="6" fill="var(--c2,#FFF8EE)"/>
+      <rect x="22" y="74" width="76" height="6" fill="var(--c2,#FFF8EE)"/>
+      <rect x="18" y="32" width="84" height="13" rx="6.5" fill="var(--c2,#FFF8EE)"/>
+      <circle cx="60" cy="27" r="7" fill="var(--c3,#E2416B)"/>
+      <path d="M60 20c2-6 6-8 10-8" stroke="#4E7A31" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-lapis" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="96" rx="48" ry="8" fill="var(--cream)" opacity=".9"/>
+      <rect x="22" y="30" width="76" height="64" rx="5" fill="var(--c1,#F3C77F)"/>
+      <g fill="var(--c2,#9B5524)"><rect x="22" y="30" width="76" height="7" rx="3"/><rect x="22" y="44" width="76" height="3"/><rect x="22" y="54" width="76" height="3"/><rect x="22" y="64" width="76" height="3"/><rect x="22" y="74" width="76" height="3"/><rect x="22" y="84" width="76" height="3"/></g>
+    </symbol>
+    <symbol id="i-roti" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="96" rx="50" ry="7" fill="var(--cream)" opacity=".9"/>
+      <path d="M14 80c0-18 8-34 22-34 4 0 8 2 10 4 4-6 9-10 14-10s10 4 14 10c2-2 6-4 10-4 14 0 22 16 22 34v6a6 6 0 0 1-6 6H20a6 6 0 0 1-6-6z" fill="var(--c1,#D9913F)"/>
+      <path d="M22 62c4-6 10-8 16-6M52 52c4-4 12-4 16 0M82 56c6-2 12 0 16 6" stroke="#FFE2B0" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".7"/>
+      <g fill="var(--c3,#5A2E1E)"><circle cx="34" cy="74" r="2.5"/><circle cx="58" cy="68" r="2.5"/><circle cx="74" cy="78" r="2.5"/><circle cx="90" cy="70" r="2.5"/></g>
+    </symbol>
+    <symbol id="i-croissant" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="94" rx="48" ry="7" fill="var(--cream)" opacity=".9"/>
+      <path d="M10 78c6-26 28-44 50-44s44 18 50 44c-8 7-18 5-24-2-6 10-16 16-26 16s-20-6-26-16c-6 7-16 9-24 2z" fill="var(--c1,#E0A04A)"/>
+      <path d="M40 46c4 12 4 28 0 40M60 36v52M80 46c-4 12-4 28 0 40" stroke="#A8641F" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/>
+      <path d="M30 56c8-10 20-14 30-14" stroke="#FFE2B0" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+    </symbol>
+    <symbol id="i-donat" viewBox="0 0 120 120">
+      <path d="M20 62a40 40 0 1 0 80 0a40 40 0 1 0-80 0ZM48 62a12 12 0 1 0 24 0a12 12 0 1 0-24 0Z" fill-rule="evenodd" fill="#E3A65A"/>
+      <path d="M25 60c0-20 15-34 35-34s35 14 35 34c0 6-6 4-8 10s-6 8-10 4-8 6-14 4-6-8-12-6-8 2-10-4-8 0-12-4zM46 60a14 14 0 1 0 28 0a14 14 0 1 0-28 0Z" fill-rule="evenodd" fill="var(--c1,#FFF8EE)"/>
+      <g stroke-width="3.5" stroke-linecap="round"><path d="M38 44l5-3" stroke="#E2416B"/><path d="M70 36l5 2" stroke="#8CC46B"/><path d="M82 52l2 5" stroke="#FFD979"/><path d="M36 64l-1 5" stroke="#5BA3E0"/><path d="M58 38l4-1" stroke="#FFD979"/><path d="M78 68l4 3" stroke="#E2416B"/></g>
+    </symbol>
+    <symbol id="i-cupcake" viewBox="0 0 120 120">
+      <path d="M28 64h64l-9 36H37z" fill="var(--c3,#E2416B)"/>
+      <path d="M42 64l4 36M60 64v36M78 64l-4 36" stroke="#fff" stroke-width="2.5" opacity=".45"/>
+      <ellipse cx="60" cy="62" rx="36" ry="10" fill="var(--c2,#FFF8EE)"/>
+      <ellipse cx="60" cy="50" rx="28" ry="10" fill="var(--c2,#FFF8EE)"/>
+      <ellipse cx="60" cy="39" rx="19" ry="9" fill="var(--c2,#FFF8EE)"/>
+      <ellipse cx="60" cy="30" rx="10" ry="7" fill="var(--c2,#FFF8EE)"/>
+      <circle cx="60" cy="20" r="7" fill="#C81E4B"/>
+    </symbol>
+    <symbol id="i-gulung" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="100" rx="46" ry="7" fill="var(--cream)" opacity=".9"/>
+      <circle cx="60" cy="58" r="40" fill="var(--c1,#F3C77F)"/>
+      <path d="M60 58m-4 0a4 4 0 1 1 8 0a10 10 0 1 1-20 0a16 16 0 1 1 32 0a22 22 0 1 1-44 0a28 28 0 1 1 56 0" fill="none" stroke="var(--c2,#FFF8EE)" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="60" cy="58" r="40" fill="none" stroke="#C98A3C" stroke-width="3"/>
+    </symbol>
+    <symbol id="i-toples" viewBox="0 0 120 120">
+      <rect x="24" y="34" width="72" height="64" rx="16" fill="var(--cream)" opacity=".85"/>
+      <rect x="30" y="22" width="60" height="14" rx="5" fill="var(--c3,#E2416B)"/>
+      <g fill="var(--c1,#F0B44C)"><circle cx="44" cy="84" r="9"/><circle cx="62" cy="86" r="9"/><circle cx="78" cy="82" r="9"/><circle cx="52" cy="68" r="9"/><circle cx="70" cy="68" r="9"/><circle cx="60" cy="52" r="9"/><circle cx="42" cy="54" r="8"/><circle cx="78" cy="54" r="8"/></g>
+      <g fill="var(--c2,#B9651F)"><circle cx="44" cy="82" r="2.2"/><circle cx="62" cy="84" r="2.2"/><circle cx="78" cy="80" r="2.2"/><circle cx="52" cy="66" r="2.2"/><circle cx="70" cy="66" r="2.2"/><circle cx="60" cy="50" r="2.2"/></g>
+      <path d="M32 46v36" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+    </symbol>
+    <symbol id="i-klepon" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="84" rx="52" ry="18" fill="#5E9C3F"/>
+      <path d="M12 84c20-6 76-6 96 0" stroke="#8CC46B" stroke-width="2" fill="none"/>
+      <circle cx="40" cy="70" r="15" fill="var(--c1,#7DBE5A)"/><circle cx="72" cy="72" r="15" fill="var(--c1,#7DBE5A)"/><circle cx="56" cy="50" r="15" fill="var(--c1,#7DBE5A)"/>
+      <g fill="#FFF8EE"><circle cx="35" cy="64" r="2"/><circle cx="44" cy="68" r="1.6"/><circle cx="68" cy="66" r="2"/><circle cx="77" cy="70" r="1.6"/><circle cx="52" cy="44" r="2"/><circle cx="61" cy="48" r="1.6"/><circle cx="40" cy="76" r="1.4"/><circle cx="72" cy="78" r="1.4"/></g>
+    </symbol>
+    <symbol id="i-daun" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="96" rx="48" ry="7" fill="var(--cream)" opacity=".9"/>
+      <path d="M22 92 52 34c4-7 12-7 16 0l30 58z" fill="var(--c1,#5E9C3F)"/>
+      <path d="M60 30v62M44 56l16 10 16-10M36 74l24 14 24-14" stroke="#9BD07B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M60 30c-2-8 2-14 8-16" stroke="#3F6E28" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-mark" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="24" fill="var(--rasp)"/>
+      <path d="M14 27h20l-3 11H17z" fill="var(--on-rasp)"/>
+      <path d="M13 26c0-6 5-9 11-9s11 3 11 9z" fill="var(--butter)"/>
+      <circle cx="24" cy="13" r="3.2" fill="var(--on-rasp)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#beranda" aria-label="Depatori, ke beranda">
+      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span><span class="brand-name">Depatori</span><span class="brand-sub">Kue &amp; Roti · Kendari</span></span>
+    </a>
+    <nav class="links" aria-label="Navigasi utama">
+      <a href="#menu">Menu</a>
+      <a href="#rakit">Kue Ulang Tahun</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#ulasan">Ulasan</a>
+      <a href="#lokasi">Lokasi</a>
+    </nav>
+    <div class="top-actions">
+      <a class="btn btn-rasp btn-sm wa-link" href="#" target="_blank" rel="noopener">
+        <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span>WhatsApp</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mnav" aria-label="Buka menu">
+        <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="wrap mnav" id="mnav" aria-label="Menu ponsel">
+    <a href="#menu">Menu</a><a href="#rakit">Kue Ulang Tahun</a><a href="#tentang">Tentang</a><a href="#ulasan">Ulasan</a><a href="#lokasi">Lokasi</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="beranda">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="status" id="status"><span class="dot"></span><span id="statusText">Memeriksa jam buka…</span></span>
+      <h1>Manis hari ini, <span class="swash">dipanggang</span> pagi tadi.</h1>
+      <p class="lead">Kue ulang tahun custom, kue tradisional, roti sobek hangat sampai nastar lebaran. Semua dibuat di dapur kami di Kendari, dengan mentega asli dan tanpa pengawet.</p>
+      <div class="ctas">
+        <a class="btn btn-rasp" href="#menu">
+          <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Lihat menu
+        </a>
+        <a class="btn btn-ghost" href="#rakit">Rakit kue ulang tahun</a>
+      </div>
+      <div class="oven" aria-live="polite">
+        <span class="oven-ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+        <span><b id="ovenText">Roti hangat keluar oven pukul 06.00, 10.00 dan 14.00 WITA</b><small id="ovenSub">Datang tepat waktu, rotinya masih mengepul.</small></span>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="blob"></div>
+      <svg class="hero-cake" viewBox="0 0 400 400">
+        <ellipse cx="200" cy="338" rx="168" ry="20" fill="var(--card)"/>
+        <ellipse cx="200" cy="334" rx="150" ry="12" fill="var(--line)"/>
+        <g class="layer">
+          <rect x="68" y="228" width="264" height="104" rx="16" fill="var(--choco)"/>
+          <rect x="68" y="276" width="264" height="8" fill="var(--sponge)" opacity=".8"/>
+        </g>
+        <g class="layer l2">
+          <path d="M68 236c0-8 6-12 14-12h236c8 0 14 4 14 12v6c-8 0-8 12-16 12s-8-10-16-10-8 16-16 16-8-12-16-12-8 8-16 8-8-14-16-14-8 10-16 10-8-8-16-8-8 14-16 14-8-10-16-10-8 8-16 8-8-12-16-12-8 10-16 10-8-6-16-6-8 10-16 10-6-6-14-6z" fill="var(--cream)"/>
+          <g fill="var(--berry)"><circle cx="100" cy="222" r="11"/><circle cx="150" cy="218" r="11"/><circle cx="250" cy="218" r="11"/><circle cx="300" cy="222" r="11"/></g>
+          <rect x="110" y="146" width="180" height="84" rx="12" fill="var(--berry)"/>
+          <rect x="110" y="190" width="180" height="6" fill="var(--cream)" opacity=".6"/>
+        </g>
+        <g class="layer l3">
+          <path d="M110 154c0-6 5-10 12-10h156c7 0 12 4 12 10v10c-6 0-6 14-12 14s-6-10-12-10-6 18-12 18-6-12-12-12-6 9-12 9-6-15-12-15-6 12-12 12-6-8-12-8-6 16-12 16-6-11-12-11-6 9-12 9-6-13-12-13-6 10-12 10-6-6-12-6L110 160z" fill="var(--cream)"/>
+        </g>
+        <g class="candles">
+          <rect x="158" y="96" width="12" height="50" rx="4" fill="var(--butter)"/>
+          <rect x="194" y="84" width="12" height="62" rx="4" fill="var(--pandan)"/>
+          <rect x="230" y="96" width="12" height="50" rx="4" fill="var(--butter)"/>
+          <path d="M158 104h12M158 116h12M158 128h12M230 104h12M230 116h12M230 128h12M194 96h12M194 110h12M194 124h12" stroke="var(--berry)" stroke-width="3" opacity=".55"/>
+          <path class="flame" d="M164 68c8 10 9 16 0 24-9-8-8-14 0-24z" fill="#FF9F2E"/>
+          <path class="flame" d="M200 56c8 10 9 16 0 24-9-8-8-14 0-24z" fill="#FF9F2E"/>
+          <path class="flame" d="M236 68c8 10 9 16 0 24-9-8-8-14 0-24z" fill="#FF9F2E"/>
+          <g fill="#FFE27A"><ellipse cx="164" cy="85" rx="3" ry="5"/><ellipse cx="200" cy="73" rx="3" ry="5"/><ellipse cx="236" cy="85" rx="3" ry="5"/></g>
+        </g>
+        <g>
+          <rect class="sprinkle" x="60" y="60" width="10" height="4" rx="2" fill="var(--berry)" style="animation-delay:-.4s"/>
+          <rect class="sprinkle" x="320" y="90" width="10" height="4" rx="2" fill="var(--pandan)" style="animation-delay:-1.6s"/>
+          <rect class="sprinkle" x="110" y="40" width="10" height="4" rx="2" fill="var(--butter)" style="animation-delay:-2.4s"/>
+          <rect class="sprinkle" x="290" y="30" width="10" height="4" rx="2" fill="var(--berry)" style="animation-delay:-.9s"/>
+          <rect class="sprinkle" x="350" y="160" width="10" height="4" rx="2" fill="var(--butter)" style="animation-delay:-3s"/>
+          <rect class="sprinkle" x="40" y="150" width="10" height="4" rx="2" fill="var(--pandan)" style="animation-delay:-2s"/>
+        </g>
+      </svg>
+      <svg class="float f1" viewBox="0 0 120 120"><use href="#i-croissant"/></svg>
+      <svg class="float f2" viewBox="0 0 120 120" style="--c1:#FFC2D1"><use href="#i-donat"/></svg>
+      <svg class="float f3" viewBox="0 0 120 120"><use href="#i-cupcake"/></svg>
+      <div class="tag-note"><span class="hand">Fresh tiap pagi!</span>pesan H-1 untuk kue custom</div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track" id="ribbon"></div>
+</div>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Etalase hari ini</span>
+      <h2>Pilih yang bikin <span class="rasp">senyum.</span></h2>
+      <p class="lead">Ketuk tombol + untuk memasukkan ke kotak pesanan. Pesanan tersusun otomatis dan dikirim lewat WhatsApp.</p>
+    </div>
+    <div class="chips" id="chips" role="tablist" aria-label="Kategori kue"></div>
+    <div class="grid" id="grid"></div>
+    <p class="note-sample">Harga dapat berubah sewaktu-waktu. Stok kue harian terbatas, untuk jumlah banyak sebaiknya pesan sehari sebelumnya.</p>
+  </div>
+</section>
+
+<section class="builder" id="rakit">
+  <div class="wrap b-grid">
+    <div class="b-preview reveal" aria-hidden="true">
+      <span class="sum" id="bPrice">Rp 185.000</span>
+      <svg viewBox="0 0 400 360" class="b-cake">
+        <ellipse cx="200" cy="318" rx="170" ry="20" fill="var(--bg-2)"/>
+        <g id="bScale" style="transform-origin:200px 316px">
+          <rect id="bSponge" x="70" y="150" width="260" height="164" rx="18" fill="#5A2E1E"/>
+          <rect class="bCream" x="70" y="200" width="260" height="9" fill="#FFF8EE"/>
+          <rect class="bCream" x="70" y="252" width="260" height="9" fill="#FFF8EE"/>
+          <path id="bTop" d="M70 162c0-10 8-16 18-16h224c10 0 18 6 18 16v8c-8 0-8 14-16 14s-8-10-16-10-8 18-16 18-8-12-16-12-8 9-16 9-8-15-16-15-8 12-16 12-8-8-16-8-8 16-16 16-8-11-16-11-8 9-16 9-8-13-16-13-8 10-16 10-8-6-16-6-8 10-18 10z" fill="#FFF8EE"/>
+          <text id="bText" x="200" y="296" text-anchor="middle" font-family="Caveat, cursive" font-size="34" font-weight="600" fill="#FFF8EE">Selamat Ulang Tahun</text>
+          <g id="tBuah">
+            <circle cx="110" cy="140" r="13" fill="#E2416B"/><circle cx="160" cy="134" r="13" fill="#E2416B"/>
+            <circle cx="240" cy="134" r="13" fill="#E2416B"/><circle cx="290" cy="140" r="13" fill="#E2416B"/>
+            <ellipse cx="200" cy="130" rx="16" ry="10" fill="#8CC46B"/><circle cx="135" cy="128" r="8" fill="#5B3A8C"/><circle cx="265" cy="128" r="8" fill="#5B3A8C"/>
+          </g>
+          <g id="tCoklat" opacity="0">
+            <path d="M70 162c0-10 8-16 18-16h224c10 0 18 6 18 16v4c-10 0-10 26-20 26s-10-16-20-16-10 30-20 30-10-20-20-20-10 12-20 12-10-24-20-24-10 18-20 18-10-10-20-10-10 26-20 26-10-18-20-18-10 10-20 10-10-12-20-12z" fill="#4A2416"/>
+            <path d="M120 120l22 26M190 112l8 34M262 118l-16 28" stroke="#3A1B10" stroke-width="10" stroke-linecap="round"/>
+          </g>
+          <g id="tSprinkle" opacity="0">
+            <g stroke-width="5" stroke-linecap="round"><path d="M100 160l8-4" stroke="#E2416B"/><path d="M140 154l7 4" stroke="#5BA3E0"/><path d="M180 152l4-7" stroke="#FFD979"/><path d="M220 156l8 2" stroke="#8CC46B"/><path d="M262 150l6 6" stroke="#E2416B"/><path d="M300 160l-7 4" stroke="#FFD979"/><path d="M160 166l6-2" stroke="#8CC46B"/><path d="M244 168l-4 5" stroke="#5BA3E0"/></g>
+          </g>
+          <g>
+            <rect x="194" y="76" width="12" height="54" rx="4" fill="#FFD979"/>
+            <path class="flame" d="M200 46c8 10 9 16 0 24-9-8-8-14 0-24z" fill="#FF9F2E"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <form class="b-form reveal" id="builder" novalidate>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="eyebrow">Kue ulang tahun custom</span>
+        <h2>Rakit kuemu sendiri.</h2>
+        <p class="lead">Pilih ukuran, rasa dan hiasan. Pratinjau di samping berubah sesuai pilihan, harga langsung terhitung.</p>
+      </div>
+      <fieldset>
+        <legend>Ukuran (diameter)</legend>
+        <div class="opts" id="optUkuran"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Rasa bolu</legend>
+        <div class="opts" id="optRasa"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Warna krim</legend>
+        <div class="opts" id="optKrim"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Hiasan atas</legend>
+        <div class="opts" id="optHias"></div>
+      </fieldset>
+      <div class="field">
+        <label for="bTulisan">Tulisan di kue</label>
+        <input id="bTulisan" maxlength="24" value="Selamat Ulang Tahun" autocomplete="off">
+        <span class="hint">Maksimal 24 huruf. Pesan kue custom paling lambat H-1.</span>
+      </div>
+      <div class="ctas">
+        <button class="btn btn-rasp" type="submit" id="bAdd">
+          <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Masukkan ke kotak pesanan
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="tentang">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Dapur kami</span>
+        <h2>Resep rumahan, <span class="rasp">rasa yang diingat.</span></h2>
+        <p class="lead">Depatori berawal dari dapur keluarga di Kendari. Sampai hari ini kami masih menimbang sendiri setiap adonan, memakai mentega asli dan telur segar, lalu memanggangnya dalam jumlah kecil supaya selalu baru.</p>
+        <p class="hand rasp" style="font-size:1.8rem">Dari dapur kami ke meja Anda.</p>
+      </div>
+      <div class="feats reveal">
+        <div class="feat"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><h3>Dipanggang tiap pagi</h3><p>Roti dan kue basah dibuat hari itu juga, bukan stok kemarin.</p></div>
+        <div class="feat"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><h3>Tanpa pengawet</h3><p>Bahan sederhana yang bisa Anda sebutkan satu per satu.</p></div>
+        <div class="feat"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><h3>Bisa pesan custom</h3><p>Kue ulang tahun, hampers, snack box rapat dan acara keluarga.</p></div>
+        <div class="feat"><span class="ico"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span><h3>Antar sekota Kendari</h3><p>Kue sampai rapi dalam kotak, ongkir mengikuti jarak.</p></div>
+      </div>
+    </div>
+    <div class="steps reveal" aria-label="Cara memesan">
+      <div class="step"><h3>Pilih kue</h3><p>Tambahkan kue dari etalase atau rakit kue ulang tahun sendiri.</p></div>
+      <div class="step"><h3>Kirim lewat WhatsApp</h3><p>Isi nama dan tanggal, pesanan tersusun otomatis. Tinggal tekan kirim.</p></div>
+      <div class="step"><h3>Ambil atau diantar</h3><p>Kami konfirmasi total dan jadwal, lalu kue siap diambil atau diantar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="ulasan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Kata pelanggan</span>
+      <h2>Yang sudah mencicipi.</h2>
+    </div>
+    <div class="rv-track" id="rvTrack" tabindex="0" aria-label="Ulasan pelanggan, geser untuk melihat"></div>
+    <span class="sample-flag" id="sampleFlag" hidden>Ulasan contoh · ganti dengan ulasan asli pelanggan</span>
+  </div>
+</section>
+
+<section id="lokasi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Mampir ke toko</span>
+      <h2>Wangi mentega sudah tercium <span class="rasp">dari depan.</span></h2>
+    </div>
+    <div class="loc-grid reveal">
+      <div class="loc-card">
+        <div>
+          <h3>Alamat</h3>
+          <p class="lead" id="alamat" style="margin-top:6px"></p>
+        </div>
+        <table class="hours" aria-label="Jam buka">
+          <tbody id="hours"></tbody>
+        </table>
+        <div class="copyrow">
+          <span class="hint" style="width:100%">Nomor WhatsApp</span>
+          <code id="waNum"></code>
+          <button class="btn btn-ghost btn-sm" type="button" id="copyWa">Salin nomor</button>
+        </div>
+      </div>
+      <div class="map-art">
+        <div class="pin">
+          <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          <b>Depatori Kendari</b>
+          <a class="btn btn-rasp btn-sm" id="mapsLink" href="#" target="_blank" rel="noopener">Buka di Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap fcta reveal">
+    <svg width="64" height="64" aria-hidden="true"><use href="#i-mark"/></svg>
+    <h2>Ada acara sebentar lagi? <span class="rasp">Kami siapkan kuenya.</span></h2>
+    <p class="lead">Ulang tahun, arisan, syukuran, rapat kantor atau hampers lebaran. Ceritakan kebutuhannya, kami bantu hitungkan.</p>
+    <div class="ctas" style="justify-content:center">
+      <a class="btn btn-rasp wa-link" href="#" target="_blank" rel="noopener"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Tanya lewat WhatsApp</a>
+      <a class="btn btn-ghost" href="#menu">Lihat menu</a>
+    </div>
+    <div class="socials">
+      <a id="igLink" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg class="lc" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></a>
+      <a id="ttLink" href="#" target="_blank" rel="noopener" aria-label="TikTok"><svg class="lc" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V2a5 5 0 0 0 5 5"/></svg></a>
+    </div>
+    <p class="copy">© <span id="year">2026</span> Depatori · Toko Kue &amp; Roti Kendari</p>
+  </div>
+</footer>
+
+<button class="cart-fab" id="cartFab" type="button" aria-controls="drawer">
+  <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+  <span class="lbl">Kotak pesanan</span><span class="count" id="cartCount">0</span>
+</button>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Kotak pesanan" aria-hidden="true">
+  <div class="d-head">
+    <h3>Kotak pesanan</h3>
+    <button class="x" type="button" id="closeCart" aria-label="Tutup kotak pesanan"><svg class="lc" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="d-body">
+    <div class="lines" id="lines"></div>
+    <div class="total"><span>Perkiraan total</span><span id="total">Rp 0</span></div>
+    <form id="orderForm" class="b-form" style="gap:12px" novalidate>
+      <div class="field"><label for="oNama">Nama</label><input id="oNama" autocomplete="name" placeholder="Nama pemesan"></div>
+      <div class="two">
+        <div class="field"><label for="oTgl">Tanggal</label><input id="oTgl" type="date"></div>
+        <div class="field"><label for="oJam">Jam</label><input id="oJam" type="time" value="10:00"></div>
+      </div>
+      <div class="field"><label for="oCara">Pengambilan</label>
+        <select id="oCara"><option>Ambil di toko</option><option>Diantar</option></select>
+      </div>
+      <div class="field" id="alamatWrap" hidden><label for="oAlamat">Alamat antar</label><input id="oAlamat" placeholder="Jalan, kelurahan, patokan"></div>
+      <div class="field"><label for="oCatatan">Catatan</label><textarea id="oCatatan" rows="2" placeholder="Misal: tanpa kacang, lilin angka 7"></textarea></div>
+    </form>
+  </div>
+  <div class="d-foot">
+    <a class="btn btn-rasp" id="sendWa" href="#" target="_blank" rel="noopener"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Kirim pesanan lewat WhatsApp</a>
+    <span class="hint" style="text-align:center">Pesan terbuka di WhatsApp. Belum ada yang terkirim sampai Anda menekan kirim di sana.</span>
+  </div>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>
