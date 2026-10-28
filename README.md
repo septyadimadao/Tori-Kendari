@@ -1,6 +1,6 @@
 # Website Depatori · Toko Kue & Roti Kendari
 
-Website satu halaman, tanpa framework. Cukup unggah 3 file (`index.html`, `style.css`, `app.js`) ke hosting statis mana pun (Netlify, Vercel, GitHub Pages, cPanel).
+Website satu halaman bertema cokelat-emas, tanpa framework. Cukup unggah 3 file (`index.html`, `style.css`, `app.js`) ke hosting statis mana pun (Netlify, Vercel, GitHub Pages, cPanel).
 
 ## Isi halaman
 1. **Beranda**: status buka/tutup otomatis (zona WITA), jadwal roti keluar oven, kue animasi (lilin menyala, sprinkle jatuh).
@@ -16,7 +16,7 @@ Website satu halaman, tanpa framework. Cukup unggah 3 file (`index.html`, `style
 | Data | Sekarang (contoh) | Lokasi |
 |---|---|---|
 | Nama toko | `Depatori` (tebakan dari permintaan klien) | `DATA.nama` + teks di `index.html` (cari "Depatori") |
-| Nomor WhatsApp | `6281234567890` | `DATA.wa` |
+| Nomor WhatsApp | `6281234929603` (0812-3492-9603, sudah asli) | `DATA.wa` |
 | Alamat | Jl. Contoh Raya No. 12, Kendari | `DATA.alamat` |
 | Link Google Maps | pencarian "Kendari" | `DATA.maps` |
 | Instagram & TikTok | halaman utama | `DATA.instagram`, `DATA.tiktok` |

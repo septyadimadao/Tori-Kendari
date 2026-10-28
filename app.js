@@ -3,7 +3,7 @@
    ========================================================= */
 const DATA = {
   nama: "Depatori",
-  wa: "6281234567890",              // CONTOH: nomor WhatsApp format 62xxxx tanpa + dan spasi
+  wa: "6281234929603",              // nomor WhatsApp toko (0812-3492-9603), format 62xxxx tanpa + dan spasi
   alamat: "Jl. Contoh Raya No. 12, Kel. Contoh, Kec. Kadia, Kota Kendari, Sulawesi Tenggara",
   maps: "https://www.google.com/maps/search/?api=1&query=Kendari",   // ganti dengan link Google Maps toko
   instagram: "https://instagram.com/",
