@@ -329,3 +329,5 @@ body.cart-open .drawer{transform:none}
 @media (max-width:1000px) and (min-width:761px){.grid-produk .item-alt .item-art{aspect-ratio:12/3}}
 @media (max-width:760px){.grid-produk .item-alt .item-art{aspect-ratio:8/3}}
 .grid-produk .item-alt .item-art svg{width:auto;height:78%;max-height:200px}
+.socials a.so-ig{background:radial-gradient(circle at 30% 107%,#FDF497 0%,#FDF497 5%,#FD5949 45%,#D6249F 60%,#285AEB 90%);border:none;color:#FFFFFF;box-shadow:0 8px 20px -8px rgba(214,36,159,.6)}
+.socials a.so-ig .lc{stroke-width:2.2}
