@@ -111,7 +111,7 @@ isi("#copyWa", el => el.addEventListener("click", e => {
 /* pita berjalan */
 (() => {
   if (!$("#ribbon")) return;
-  const kata = ["Kue Tori Ketan","Deppa Tori","Khas Toraja","Bertabur Wijen","Diproduksi Setiap Hari","Kemasan Pouch","Pas untuk Oleh-oleh","Oleh-oleh dari Kendari"];
+  const kata = ["Kue Tori Ketan","Deppa Tori","Khas Toraja","Bertabur Wijen","Diproduksi Setiap Hari","Kemasan Pouch","Renyah & Legit","Oleh-oleh dari Kendari"];
   const html = kata.map(k => "<span>" + esc(k) + "</span>").join("");
   $("#ribbon").innerHTML = html + html;
 })();
