@@ -4,7 +4,7 @@ Website satu halaman bertema cokelat-emas, tanpa framework. Cukup unggah file ke
 
 ## Isi halaman
 1. **Beranda**: status buka/tutup otomatis (WITA), ilustrasi kue tori beranimasi.
-2. **Produk**: 7 produk (Kue Tori, pouch, Deppa Tori, Baby Cumi), plus kartu pesanan banyak / oleh-oleh.
+2. **Produk**: 6 produk (Kue Tori, pouch, Deppa Tori), plus kartu pesanan banyak / oleh-oleh.
 3. **Hitung pesanan**: pilih kemasan dan jumlah, total langsung terhitung.
 4. **Tentang kue tori** & cara pesan.
 5. **Lokasi & jam buka**, nomor WA, email.
@@ -19,7 +19,7 @@ Website satu halaman bertema cokelat-emas, tanpa framework. Cukup unggah file ke
 | Email | yulisal53@gmail.com | `DATA.email` |
 | Instagram | @lisaolshopkendari | `DATA.instagram` |
 | Jam buka | Setiap hari 09.00–20.00 WITA | `DATA.jam` |
-| Produk & harga | Kue Tori 500 g/1 kg, pouch 300 g/500 g/1 kg, Deppa Tori 350 g, Baby Cumi | `MENU` |
+| Produk & harga | Kue Tori 500 g/1 kg, pouch 300 g/500 g/1 kg, Deppa Tori 350 g | `MENU` |
 | Ulasan | kosong (bagian ulasan tersembunyi) | `ULASAN` |
 
 ## Memasang foto produk

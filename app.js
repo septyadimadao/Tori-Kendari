@@ -19,8 +19,7 @@ const MENU = [
   {id:"p1kg", nama:"Kue Tori kemasan pouch 1 kg", desc:"Kemasan pouch 1 kg, rapat dan praktis untuk oleh-oleh.", harga:85000, unit:"/ pouch 1 kg", label:"Pouch 1 kg", berat:1, ikon:"pouch", foto:"", badge:"Pouch"},
   {id:"p500", nama:"Kue Tori kemasan pouch 500 g", desc:"Kemasan pouch setengah kilo.", harga:45000, unit:"/ pouch 500 g", label:"Pouch 500 g", berat:.5, ikon:"pouch", foto:""},
   {id:"p300", nama:"Kue Tori pouch 300 g", desc:"Pouch kecil 300 gram, pas untuk camilan sendiri.", harga:30000, unit:"/ pouch 300 g", label:"Pouch 300 g", berat:.3, ikon:"pouch", foto:"", badge:"Ukuran kecil"},
-  {id:"dt350", nama:"Deppa Tori", desc:"Kue tradisional deppa tori, kemasan 350 gram.", harga:30000, unit:"/ 350 g", label:"Deppa Tori 350 g", berat:.35, ikon:"deppa", foto:"", badge:"Tradisional"},
-  {id:"cumi", nama:"Baby Cumi", desc:"Baby cumi kering dalam kemasan.", harga:75000, unit:"/ bungkus", label:"Baby Cumi", berat:0, ikon:"cumi", foto:"", badge:"Lainnya"}
+  {id:"dt350", nama:"Deppa Tori", desc:"Kue tradisional deppa tori, kemasan 350 gram.", harga:30000, unit:"/ 350 g", label:"Deppa Tori 350 g", berat:.35, ikon:"deppa", foto:"", badge:"Tradisional"}
 ];
 
 // Ulasan pelanggan asli. Bagian ulasan tampil otomatis jika daftar ini diisi
@@ -102,7 +101,7 @@ $("#copyWa").addEventListener("click", e => {
 
 /* pita berjalan */
 (() => {
-  const kata = ["Kue Tori Ketan","Deppa Tori","Khas Toraja","Bertabur Wijen","Diproduksi Setiap Hari","Pouch 300 g · Rp 30.000","500 g · Rp 45.000","1 kg · Rp 85.000","Baby Cumi","Oleh-oleh dari Kendari"];
+  const kata = ["Kue Tori Ketan","Deppa Tori","Khas Toraja","Bertabur Wijen","Diproduksi Setiap Hari","Pouch 300 g · Rp 30.000","500 g · Rp 45.000","1 kg · Rp 85.000","Oleh-oleh dari Kendari"];
   const html = kata.map(k => "<span>" + esc(k) + "</span>").join("");
   $("#ribbon").innerHTML = html + html;
 })();
