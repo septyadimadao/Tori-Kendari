@@ -343,3 +343,19 @@ body.cart-open .drawer{transform:none}
 .grid-produk .item-alt .item-art{aspect-ratio:12/3}
 @media (max-width:1000px){.grid-produk .item-alt{grid-column:auto}.grid-produk .item-alt .item-art{aspect-ratio:4/3}.grid-produk .item-alt .item-art svg{width:62%;height:auto}}
 @media (max-width:520px){.grid-produk .item-alt{grid-column:auto}.item-alt .item-body p{display:none}}
+
+/* kotak informasi yang hidup */
+.feat,.info,.tip,.ex-card,.loc-card{position:relative;overflow:hidden;isolation:isolate;transition:transform .35s cubic-bezier(.2,.8,.3,1),border-color .35s,box-shadow .35s}
+.feat::after,.info::after,.tip::after,.ex-card::after,.loc-card::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(246,222,159,.09) 50%,transparent 65%);background-size:250% 100%;animation:kilau 7s ease-in-out infinite;animation-delay:var(--kd,0s)}
+.feat:hover,.info:hover,.tip:hover,.ex-card:hover,.loc-card:hover{transform:translateY(-6px);border-color:var(--rasp);box-shadow:0 22px 44px -26px var(--shadow),0 0 0 1px rgba(217,174,91,.25),0 0 34px -12px rgba(217,174,91,.45)}
+.feat .ico,.ex-card .ico{animation:melayang 4s ease-in-out infinite;animation-delay:var(--kd,0s)}
+.info-no::after{content:"";display:block;width:34px;height:2px;margin-top:8px;border-radius:2px;background:linear-gradient(90deg,var(--rasp),transparent);transition:width .4s}
+.info:hover .info-no::after{width:80px}
+:is(.feats,.info-grid,.tip-grid,.ex-grid,.loc-grid)>*{animation:naik .7s cubic-bezier(.2,.8,.3,1) both}
+:is(.feats,.info-grid,.tip-grid,.ex-grid,.loc-grid).pre>*{animation:none;opacity:0}
+:is(.feats,.info-grid,.tip-grid,.ex-grid,.loc-grid)>:nth-child(2){animation-delay:.12s;--kd:1.2s}
+:is(.feats,.info-grid,.tip-grid,.ex-grid,.loc-grid)>:nth-child(3){animation-delay:.24s;--kd:2.4s}
+:is(.feats,.info-grid,.tip-grid,.ex-grid,.loc-grid)>:nth-child(4){animation-delay:.36s;--kd:3.6s}
+@keyframes naik{from{opacity:0;transform:translateY(26px) scale(.97)}}
+@keyframes kilau{0%,55%{background-position:120% 0}100%{background-position:-120% 0}}
+@keyframes melayang{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
