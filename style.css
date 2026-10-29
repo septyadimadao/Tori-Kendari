@@ -412,3 +412,47 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 .ptable tr.pt-grup td{text-align:left;font-size:.72rem;color:var(--rasp);font-weight:700}
 .pt-nama{line-height:1.2}
 .pt-nama{display:flex}.pt-isi{vertical-align:middle}
+
+/* gaya referensi: judul klasik, ornamen, info bar, filter, footer kolom */
+h1,h2{font-family:"Cinzel","Playfair Display",Georgia,serif;font-weight:600;letter-spacing:.02em;line-height:1.12}
+h1{font-size:clamp(2.2rem,5.4vw,4rem)}
+h2{font-size:clamp(1.8rem,3.8vw,2.8rem)}
+h1 .swash,h1 .rasp,h2 .rasp{font-style:normal}
+.hero h1 .swash::after{display:none}
+.sec-head h1::after,.sec-head h2::after{content:"◆";display:block;width:120px;margin-top:14px;font:400 9px/10px var(--body);text-align:center;color:var(--gold-hi);background:linear-gradient(90deg,transparent,var(--rasp)) left center/48px 1px no-repeat,linear-gradient(90deg,var(--rasp),transparent) right center/48px 1px no-repeat}
+.links a{border-radius:0;background:none!important;position:relative;letter-spacing:.04em}
+.links a::after{content:"";position:absolute;left:.9em;right:.9em;bottom:.15em;height:1.5px;background:var(--rasp);transform:scaleX(0);transition:transform .3s}
+.links a:hover::after,.links a.on::after{transform:scaleX(1)}
+.links a.on{color:var(--gold-hi)}
+.btn{text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;padding:1.05em 1.7em}
+.btn-sm{font-size:.72rem}
+.btn-ghost{border-color:rgba(217,174,91,.55);color:var(--ink);backdrop-filter:blur(6px)}
+.btn-ghost:hover{border-color:var(--gold-hi);color:var(--gold-hi);box-shadow:0 0 24px -8px rgba(246,222,159,.5)}
+.page-first,.hero{background:radial-gradient(70% 60% at 50% -10%,rgba(217,174,91,.16),transparent 70%)}
+.infobar{border-block:1px solid var(--line);background:linear-gradient(90deg,rgba(217,174,91,.04),rgba(217,174,91,.10),rgba(217,174,91,.04))}
+.infobar-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding-block:16px}
+.infobar span{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.infobar .lc{width:18px;height:18px;color:var(--rasp)}
+.filter{display:flex;flex-wrap:wrap;gap:10px;margin:-6px 0 26px}
+.filter button{font:600 .8rem var(--body);letter-spacing:.12em;text-transform:uppercase;padding:.75em 1.4em;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:all .3s}
+.filter button:hover{color:var(--gold-hi);border-color:var(--rasp)}
+.filter button.on{background:linear-gradient(135deg,#F2CF85,#D9AE5B 55%,#B8862F);color:var(--on-rasp);border-color:transparent;box-shadow:0 8px 22px -8px var(--rasp)}
+.item[hidden]{display:none}
+footer{padding-bottom:0}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1.3fr;gap:32px;text-align:left;margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
+.fbrand{display:grid;gap:14px;align-content:start}
+.fbrand-logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.fbrand-logo b{display:block;font-family:"Cinzel",serif;font-size:1.15rem;letter-spacing:.06em}
+.fbrand-logo small{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rasp)}
+.fbrand p{color:var(--muted);font-size:.9rem;max-width:36ch}
+.fcol{display:grid;gap:10px;align-content:start}
+.fcol h4{margin:0 0 4px;font:600 .74rem var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--rasp)}
+.fcol a{color:var(--muted);text-decoration:none;font-size:.92rem;width:fit-content;transition:color .2s,transform .2s}
+.fcol a:hover{color:var(--gold-hi);transform:translateX(4px)}
+.fi{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:.9rem}
+.fi .lc{width:18px;height:18px;flex:none;margin-top:2px;color:var(--rasp)}
+.fbottom{margin-top:36px;padding-block:20px;border-top:1px solid var(--line);text-align:center}
+.fbottom .copy{margin:0}
+@media (max-width:760px){.fcols{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.infobar-in{justify-content:center}}
+@media (max-width:460px){.fcols{grid-template-columns:1fr}.infobar span{font-size:.7rem;letter-spacing:.12em}}
+.infobar{margin-bottom:14px}

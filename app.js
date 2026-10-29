@@ -176,7 +176,7 @@ const shake = () => { const f = $("#cartFab"); f.classList.remove("shake"); void
 function renderMenu(){
   if (!$("#grid")) return;
   $("#grid").innerHTML = MENU.map((m, i) =>
-    '<article class="item" style="animation-delay:' + i * 60 + 'ms">' +
+    '<article class="item" data-kat="' + (m.ikon === "pouch" ? "pouch" : "biasa") + '" style="animation-delay:' + i * 60 + 'ms">' +
       '<div class="item-art">' + (m.badge ? '<span class="badge">' + esc(m.badge) + "</span>" : "") +
       (m.foto ? '<img src="' + esc(m.foto) + '" alt="' + esc(m.nama) + '" loading="lazy">' : '<svg viewBox="0 0 120 120" aria-hidden="true"><use href="#i-' + m.ikon + '"/></svg>') + "</div>" +
       '<div class="item-body"><h3>' + esc(m.nama) + "</h3><p>" + esc(m.desc) + "</p>" +
@@ -195,6 +195,19 @@ function renderMenuQty(){
   });
 }
 renderMenu();
+
+/* filter produk */
+isi(".filter", el => {
+  el.addEventListener("click", e => {
+    const b = e.target.closest("[data-f]"); if (!b) return;
+    $$("[data-f]", el).forEach(x => { x.classList.toggle("on", x === b); x.setAttribute("aria-pressed", x === b); });
+    $$("#grid .item[data-kat]").forEach((it, i) => {
+      const tampil = b.dataset.f === "semua" || it.dataset.kat === b.dataset.f;
+      it.hidden = !tampil;
+      if (tampil) { it.style.animation = "none"; it.offsetWidth; it.style.animation = ""; it.style.animationDelay = i * 50 + "ms"; }
+    });
+  });
+});
 
 /* tabel harga (halaman produk) */
 isi("#priceTable", el => {
