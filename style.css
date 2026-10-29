@@ -393,3 +393,22 @@ footer{position:relative}
 footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--rasp),transparent)}
 @media (max-width:620px){.debu i:nth-child(n+8){display:none}body::after{opacity:.04}}
 @media (prefers-reduced-motion:reduce){.debu{display:none}h1 .rasp,h2 .rasp,h1 .swash{background-position:0 0}}
+
+/* tabel harga rapi */
+.table-card{padding:10px clamp(16px,3vw,28px) 14px}
+.ptable th{padding:18px 14px 12px;border-bottom:1px solid rgba(217,174,91,.35)}
+.ptable td{padding:14px;border-top:1px dashed var(--line);vertical-align:middle}
+.ptable tbody tr:not(.pt-grup){transition:background .25s}
+.ptable tbody tr:not(.pt-grup):hover{background:rgba(217,174,91,.06)}
+.ptable th:nth-child(2),.ptable td:nth-child(2){text-align:center}
+.ptable td:last-child{font-size:1.08rem;color:var(--gold-hi)}
+.ptable .pt-grup td{border-top:none;padding:22px 14px 6px;font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--rasp)}
+.ptable .pt-grup:first-child td{padding-top:14px}
+.ptable .pt-grup+tr td{border-top:none}
+.pt-nama{display:inline-flex;align-items:center;gap:12px;font-weight:600;color:var(--ink)}
+.pt-nama svg{width:34px;height:34px;flex:none;padding:5px;border-radius:10px;background:var(--bg-2);border:1px solid var(--line)}
+.pt-isi{display:inline-block;min-width:68px;padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:700;color:var(--gold-hi);background:rgba(217,174,91,.12);border:1px solid rgba(217,174,91,.35)}
+@media (max-width:520px){.ptable th,.ptable td{padding-inline:8px}.pt-nama{gap:8px;font-size:.92rem}.pt-nama svg{width:28px;height:28px;padding:4px}.pt-isi{min-width:56px;padding:3px 9px;font-size:.8rem}.ptable td:last-child{font-size:.98rem}}
+.ptable tr.pt-grup td{text-align:left;font-size:.72rem;color:var(--rasp);font-weight:700}
+.pt-nama{line-height:1.2}
+.pt-nama{display:flex}.pt-isi{vertical-align:middle}

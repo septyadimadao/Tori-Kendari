@@ -198,7 +198,13 @@ renderMenu();
 
 /* tabel harga (halaman produk) */
 isi("#priceTable", el => {
-  el.innerHTML = MENU.map(m => "<tr><td>" + esc(m.nama) + "</td><td>" + esc(m.unit.replace("/ ", "").replace(/^kg$/, "1 kg")) + "</td><td>" + rp(m.harga) + "</td></tr>").join("");
+  const ukuran = b => b >= 1 ? b + " kg" : Math.round(b * 1000) + " g";
+  const grup = [["Kemasan biasa", MENU.filter(m => m.ikon !== "pouch")], ["Kemasan pouch", MENU.filter(m => m.ikon === "pouch")]];
+  el.innerHTML = grup.map(([judul, isiGrup]) =>
+    '<tr class="pt-grup"><td colspan="3">' + judul + "</td></tr>" +
+    isiGrup.map(m => '<tr><td><span class="pt-nama"><svg aria-hidden="true"><use href="#i-' + (m.ikon === "pouch" ? "pouch" : "tori") + '"/></svg>' +
+      (m.ikon === "pouch" ? "Kue Tori pouch" : "Kue Tori") + '</span></td><td><span class="pt-isi">' + ukuran(m.berat) + "</span></td><td>" + rp(m.harga) + "</td></tr>").join("")
+  ).join("");
 });
 
 /* hitung pesanan */
