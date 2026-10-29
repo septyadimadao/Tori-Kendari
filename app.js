@@ -9,17 +9,16 @@ const DATA = {
   email: "yulisal53@gmail.com",
   instagram: "https://instagram.com/lisaolshopkendari",
   // jam buka per hari (0 = Minggu). null = tutup
-  jam: [["09:00","20:00"],["09:00","20:00"],["09:00","20:00"],["09:00","20:00"],["09:00","20:00"],["09:00","20:00"],["09:00","20:00"]]
+  jam: [["08:00","20:00"],["08:00","20:00"],["08:00","20:00"],["08:00","20:00"],["08:00","20:00"],["08:00","20:00"],["08:00","20:00"]]
 };
 
 // Produk. foto: isi dengan nama file di folder foto/, misalnya "foto/tori-1kg.jpg". Kosong = pakai ilustrasi
 const MENU = [
-  {id:"t500", nama:"Kue Tori Ketan khas Toraja", desc:"Kue tori ketan bertabur wijen. 85 ribu/kg, 45 ribu/500 gram.", harga:45000, unit:"/ 500 g", label:"Kue Tori 500 g", berat:.5, ikon:"tori", foto:"", badge:"Khas Toraja"},
-  {id:"t1kg", nama:"Kue Tori uk 1 kg", desc:"Kue tori kemasan 1 kg, kuenya diproduksi setiap hari.", harga:85000, unit:"/ kg", label:"Kue Tori 1 kg", berat:1, ikon:"kotak", foto:"", badge:"Lebih hemat"},
-  {id:"p1kg", nama:"Kue Tori kemasan pouch 1 kg", desc:"Kemasan pouch 1 kg, rapat dan praktis untuk oleh-oleh.", harga:85000, unit:"/ pouch 1 kg", label:"Pouch 1 kg", berat:1, ikon:"pouch", foto:"", badge:"Pouch"},
-  {id:"p500", nama:"Kue Tori kemasan pouch 500 g", desc:"Kemasan pouch setengah kilo.", harga:45000, unit:"/ pouch 500 g", label:"Pouch 500 g", berat:.5, ikon:"pouch", foto:""},
-  {id:"p300", nama:"Kue Tori pouch 300 g", desc:"Pouch kecil 300 gram, pas untuk camilan sendiri.", harga:30000, unit:"/ pouch 300 g", label:"Pouch 300 g", berat:.3, ikon:"pouch", foto:"", badge:"Ukuran kecil"},
-  {id:"dt350", nama:"Deppa Tori", desc:"Kue tradisional deppa tori, kemasan 350 gram.", harga:30000, unit:"/ 350 g", label:"Deppa Tori 350 g", berat:.35, ikon:"deppa", foto:"", badge:"Tradisional"}
+  {id:"t500", nama:"Kue Tori 500 g", desc:"Kue tori bertabur wijen dengan manisnya gula aren, kemasan setengah kilo.", harga:45000, unit:"/ 500 g", label:"Kue Tori 500 g", berat:.5, ikon:"tori", foto:"", badge:"Favorit"},
+  {id:"t1kg", nama:"Kue Tori 1 kg", desc:"Kue tori kemasan 1 kg, kuenya diproduksi setiap hari.", harga:85000, unit:"/ kg", label:"Kue Tori 1 kg", berat:1, ikon:"kotak", foto:"", badge:"Lebih hemat"},
+  {id:"p1kg", nama:"Kue Tori pouch 1 kg", desc:"Kemasan pouch 1 kg, rapat dan praktis untuk oleh-oleh.", harga:85000, unit:"/ pouch 1 kg", label:"Pouch 1 kg", berat:1, ikon:"pouch", foto:"", badge:"Pouch"},
+  {id:"p500", nama:"Kue Tori pouch 500 g", desc:"Kemasan pouch setengah kilo.", harga:47000, unit:"/ pouch 500 g", label:"Pouch 500 g", berat:.5, ikon:"pouch", foto:""},
+  {id:"p250", nama:"Kue Tori pouch 250 g", desc:"Pouch kecil 250 gram, pas untuk camilan sendiri.", harga:25000, unit:"/ pouch 250 g", label:"Pouch 250 g", berat:.25, ikon:"pouch", foto:"", badge:"Ukuran kecil"}
 ];
 
 // Ulasan pelanggan asli. Bagian ulasan tampil otomatis jika daftar ini diisi
@@ -111,7 +110,7 @@ isi("#copyWa", el => el.addEventListener("click", e => {
 /* pita berjalan */
 (() => {
   if (!$("#ribbon")) return;
-  const kata = ["Kue Tori Ketan","Deppa Tori","Khas Toraja","Bertabur Wijen","Diproduksi Setiap Hari","Kemasan Pouch","Renyah & Legit","Oleh-oleh dari Kendari"];
+  const kata = ["Kue Tori","Kue Tradisional","Bertabur Wijen","Manis Gula Aren","Diproduksi Setiap Hari","Renyah & Legit","Oleh-oleh dari Kendari"];
   const html = kata.map(k => "<span>" + esc(k) + "</span>").join("");
   $("#ribbon").innerHTML = html + html;
 })();

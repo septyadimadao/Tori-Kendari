@@ -1,4 +1,4 @@
-# Website Tori Kendari · Kue Tori Ketan khas Toraja
+# Website Tori Kendari · Kue Tori Tradisional
 
 Website satu halaman bertema cokelat-emas, tanpa framework. Cukup unggah file ke hosting statis (GitHub Pages, Netlify, cPanel).
 
@@ -22,8 +22,8 @@ Kotak pesanan (tombol kanan bawah) ada di semua halaman dan isinya tetap terbawa
 | Alamat | Jl. Mekar Indah, Bumi Mekar Residence, Kendari | `DATA.alamat`, `DATA.maps` |
 | Email | yulisal53@gmail.com | `DATA.email` |
 | Instagram | @lisaolshopkendari | `DATA.instagram` |
-| Jam buka | Setiap hari 09.00–20.00 WITA | `DATA.jam` |
-| Produk & harga | Kue Tori 500 g/1 kg, pouch 300 g/500 g/1 kg, Deppa Tori 350 g | `MENU` |
+| Jam buka | Setiap hari 08.00–20.00 WITA | `DATA.jam` |
+| Produk & harga | Kue Tori 500 g Rp45.000, 1 kg Rp85.000; pouch 1 kg Rp85.000, 500 g Rp47.000, 250 g Rp25.000 | `MENU` |
 | Ulasan | kosong (bagian ulasan tersembunyi) | `ULASAN` |
 
 ## Memasang foto produk
