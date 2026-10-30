@@ -5,9 +5,9 @@
   --butter:#E9C46A; --pista:#A8C686; --line:rgba(217,174,91,.2); --shadow:rgba(0,0,0,.55);
   /* warna makanan */
   --sponge:#E7B86C; --choco:#5A2E1E; --cream:#FFF3DC; --berry:#C2364F; --pandan:#8CB86B;
-  --display:"Playfair Display","Didot",Georgia,serif;
+  --display:"Fraunces",Georgia,serif;
   --body:"Figtree","Segoe UI",system-ui,sans-serif;
-  --hand:"Great Vibes","Snell Roundhand",cursive;
+  --hand:"Caveat","Comic Neue",cursive;
   color-scheme:dark;
 }
 
@@ -414,10 +414,10 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 .pt-nama{display:flex}.pt-isi{vertical-align:middle}
 
 /* gaya referensi: judul klasik, ornamen, info bar, filter, footer kolom */
-h1,h2{font-family:"Cinzel","Playfair Display",Georgia,serif;font-weight:600;letter-spacing:.02em;line-height:1.12}
+h1,h2{font-family:var(--display);font-weight:650;letter-spacing:-.01em;line-height:1.1;font-variation-settings:"SOFT" 100,"WONK" 0}
 h1{font-size:clamp(2.2rem,5.4vw,4rem)}
 h2{font-size:clamp(1.8rem,3.8vw,2.8rem)}
-h1 .swash,h1 .rasp,h2 .rasp{font-style:normal}
+h1 .swash,h1 .rasp,h2 .rasp{font-style:italic}
 .hero h1 .swash::after{display:none}
 .sec-head h1::after,.sec-head h2::after{content:"◆";display:block;width:120px;margin-top:14px;font:400 9px/10px var(--body);text-align:center;color:var(--gold-hi);background:linear-gradient(90deg,transparent,var(--rasp)) left center/48px 1px no-repeat,linear-gradient(90deg,var(--rasp),transparent) right center/48px 1px no-repeat}
 .links a{border-radius:0;background:none!important;position:relative;letter-spacing:.04em}
@@ -442,7 +442,7 @@ footer{padding-bottom:0}
 .fcols{display:grid;grid-template-columns:1.4fr 1fr 1.3fr;gap:32px;text-align:left;margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
 .fbrand{display:grid;gap:14px;align-content:start}
 .fbrand-logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.fbrand-logo b{display:block;font-family:"Cinzel",serif;font-size:1.15rem;letter-spacing:.06em}
+.fbrand-logo b{display:block;font-family:var(--display);font-size:1.2rem}
 .fbrand-logo small{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rasp)}
 .fbrand p{color:var(--muted);font-size:.9rem;max-width:36ch}
 .fcol{display:grid;gap:10px;align-content:start}
@@ -463,7 +463,7 @@ footer{padding-bottom:0}
 .ribbon::before,.ribbon::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:1;pointer-events:none}
 .ribbon::before{left:0;background:linear-gradient(90deg,var(--bg-2),transparent)}
 .ribbon::after{right:0;background:linear-gradient(-90deg,var(--bg-2),transparent)}
-.ribbon-track{font-family:"Cinzel",serif;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;align-items:center}
+.ribbon-track{font-family:var(--display);font-size:1.2rem;font-weight:600;align-items:center}
 .ribbon-track span::after{color:var(--rasp);font-size:.8em}
 .ribbon{border-top-color:var(--rasp)}
 #hitung{scroll-margin-top:72px}
@@ -472,3 +472,5 @@ footer{padding-bottom:0}
 .fbrand-logo{gap:10px}
 @media (max-width:760px){.fcols{grid-template-columns:1fr 1fr;justify-content:stretch}}
 @media (max-width:460px){.fcols{grid-template-columns:1fr}}
+.hand{font-size:1.7em}
+.tag-note .hand{font-size:1.9rem}
