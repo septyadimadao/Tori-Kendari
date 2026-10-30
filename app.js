@@ -22,7 +22,7 @@ const MENU = [
 ];
 
 // Ulasan pelanggan asli. Bagian ulasan tampil otomatis jika daftar ini diisi
-// contoh isi: {nama:"Ibu Rina", ket:"Oleh-oleh keluarga", isi:"Renyah dan manisnya pas.", n:5}
+// contoh isi: {nama:"Ibu Rina", ket:"Oleh-oleh keluarga", produk:"Pouch 500 g", isi:"Renyah dan manisnya pas.", n:5}
 const ULASAN = [];
 
 /* ========================================================= */
@@ -261,6 +261,43 @@ isi("#priceTable", el => {
     '<figure class="rv" style="margin:0"><span class="stars" aria-label="' + u.n + ' dari 5 bintang">' + "★".repeat(u.n) + "☆".repeat(5 - u.n) + "</span><q>" + esc(u.isi) + "</q>" +
     '<figcaption class="rv-who"><span class="av" style="background:' + C[i % C.length] + '">' + esc(u.nama[0]) + "</span><span>" + esc(u.nama) + "<small>" + esc(u.ket) + "</small></span></figcaption></figure>"
   ).join("");
+})();
+
+/* halaman ulasan */
+(() => {
+  if (!$("#rvGrid")) return;
+  const C = ["#E9C46A","#A8C686","#E7B86C","#D9AE5B"];
+  const bintang = n => "★".repeat(n) + "☆".repeat(5 - n);
+  const total = ULASAN.length;
+  if (total) {
+    const avg = ULASAN.reduce((t, u) => t + u.n, 0) / total;
+    $("#rvAvg").textContent = avg.toFixed(1).replace(".", ",");
+    $("#rvStars").textContent = bintang(Math.round(avg));
+    $("#rvCount").textContent = total + " ulasan";
+  } else {
+    $("#rvStars").textContent = "☆☆☆☆☆";
+  }
+  $("#rvBars").innerHTML = [5, 4, 3, 2, 1].map(k => {
+    const c = ULASAN.filter(u => u.n === k).length, pct = total ? c / total * 100 : 0;
+    return '<div class="rv-bar"><span>' + k + '★</span><i><b style="width:' + pct + '%"></b></i><span>' + c + "</span></div>";
+  }).join("");
+  $("#rvGrid").innerHTML = total
+    ? ULASAN.map((u, i) =>
+        '<figure class="rv-card"><span class="rv-q" aria-hidden="true">“</span><span class="stars" aria-label="' + u.n + ' dari 5 bintang">' + bintang(u.n) + "</span><blockquote>" + esc(u.isi) + "</blockquote>" +
+        '<figcaption><span class="av" style="background:' + C[i % C.length] + '">' + esc(u.nama[0]) + "</span><span><b>" + esc(u.nama) + "</b><small>" + esc(u.ket || "") + "</small></span>" +
+        (u.produk ? '<span class="rv-tag">' + esc(u.produk) + "</span>" : "") + "</figcaption></figure>").join("")
+    : '<div class="rv-empty"><span class="rv-q" aria-hidden="true">“</span><h3>Ulasan pertama bisa dari Anda.</h3><p>Belum ada ulasan yang ditampilkan. Sudah mencoba kue tori kami? Ceritakan pengalaman Anda, nanti tampil di sini.</p><a class="btn btn-rasp btn-sm" href="#tulis">Tulis ulasan</a></div>';
+
+  $("#rvProduk").innerHTML = MENU.map(m => "<option>" + esc(m.nama) + "</option>").join("");
+  $("#rvForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const nama = $("#rvNama").value.trim(), isi = $("#rvIsi").value.trim();
+    const n = Number($("#rvForm").querySelector('input[name="n"]:checked').value);
+    if (!nama || !isi) { $("#rvErr").textContent = "Isi nama dan ulasan Anda dulu, ya."; return; }
+    $("#rvErr").textContent = "";
+    const teks = ["Halo " + DATA.nama + ", saya mau kirim ulasan:", "", "Nama: " + nama, "Produk: " + $("#rvProduk").value, "Nilai: " + bintang(n) + " (" + n + "/5)", "Ulasan: " + isi];
+    window.open(waBase + "?text=" + encodeURIComponent(teks.join("\n")), "_blank", "noopener");
+  });
 })();
 
 /* muncul saat di-scroll: hanya untuk elemen di bawah layar pertama */

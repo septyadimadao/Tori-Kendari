@@ -474,3 +474,53 @@ footer{padding-bottom:0}
 @media (max-width:460px){.fcols{grid-template-columns:1fr}}
 .hand{font-size:1.7em}
 .tag-note .hand{font-size:1.9rem}
+
+/* halaman ulasan */
+.rv-top{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,56px);align-items:center}
+.rv-sum{display:grid;justify-items:center;gap:6px;padding:28px;border-radius:24px;background:var(--card);border:1px solid var(--line);text-align:center}
+.rv-avg{font:700 4rem/1 var(--display);color:var(--gold-hi)}
+.rv-stars{font-size:1.4rem;letter-spacing:.12em;color:var(--rasp)}
+.rv-count{color:var(--muted);font-size:.9rem}
+.rv-bars{display:grid;gap:6px;width:100%;margin-top:12px}
+.rv-bar{display:grid;grid-template-columns:34px 1fr 24px;align-items:center;gap:10px;font-size:.82rem;color:var(--muted)}
+.rv-bar i{height:8px;border-radius:99px;background:var(--bg-2);overflow:hidden}
+.rv-bar b{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#B8862F,var(--rasp),#F6DE9F)}
+.rv-list{padding-top:0}
+.rv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.rv-card,.rv-empty{position:relative;display:grid;gap:14px;align-content:start;margin:0;padding:28px;border-radius:22px;background:var(--card);border:1px solid var(--line);overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.rv-card:hover{transform:translateY(-6px);border-color:var(--rasp);box-shadow:0 22px 44px -26px var(--shadow),0 0 30px -12px rgba(217,174,91,.45)}
+.rv-q{position:absolute;top:-18px;right:18px;font:700 7rem/1 var(--display);color:var(--rasp);opacity:.18;pointer-events:none}
+.rv-card .stars{color:var(--rasp);letter-spacing:.1em}
+.rv-card blockquote{margin:0;font-size:1.02rem;line-height:1.7;color:var(--ink)}
+.rv-card figcaption{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.rv-card .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:var(--on-rasp)}
+.rv-card figcaption b{display:block}
+.rv-card figcaption small{color:var(--muted)}
+.rv-tag{margin-left:auto;padding:4px 10px;border-radius:999px;font-size:.75rem;font-weight:700;color:var(--gold-hi);background:rgba(217,174,91,.12);border:1px solid rgba(217,174,91,.3)}
+.rv-empty{grid-column:1/-1;justify-items:center;text-align:center;padding:44px 24px;border-style:dashed}
+.rv-empty h3{font:600 1.6rem var(--display);color:var(--gold-hi)}
+.rv-empty p{color:var(--muted);max-width:46ch}
+.rv-write{background:var(--bg-2)}
+.rv-write-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.rv-form{display:grid;gap:16px;padding:clamp(20px,3vw,32px);border-radius:24px;background:var(--card);border:1px solid var(--line)}
+.rv-form .field{display:grid;gap:6px}
+.rv-form label,.rate legend{font-weight:600;font-size:.9rem}
+.rv-form input:not([type=radio]),.rv-form select,.rv-form textarea{width:100%;padding:.8em 1em;border-radius:14px;border:1px solid var(--line);background:var(--bg-2);color:var(--ink);resize:vertical}
+.rv-form input:focus,.rv-form select:focus,.rv-form textarea:focus{outline:none;border-color:var(--rasp);box-shadow:0 0 0 3px rgba(217,174,91,.18)}
+.rate{border:0;margin:0;padding:0}
+.rate-stars{display:inline-flex;flex-direction:row-reverse;gap:4px;margin-top:6px}
+.rate-stars input{position:absolute;opacity:0;pointer-events:none}
+.rate-stars label{cursor:pointer;line-height:0}
+.rate-stars svg{width:34px;height:34px;fill:transparent;stroke:var(--rasp);stroke-width:1.4;transition:transform .2s,fill .2s}
+.rate-stars input:checked~label svg,.rate-stars label:hover svg,.rate-stars label:hover~label svg{fill:var(--rasp)}
+.rate-stars label:hover svg{transform:scale(1.15) rotate(-6deg)}
+.rate-stars input:focus-visible+label svg{outline:2px solid var(--gold-hi);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#rvErr:empty{display:none}
+#rvErr{color:#F2A07B}
+:is(.rv-grid)>*{animation:naik .7s cubic-bezier(.2,.8,.3,1) both}
+.rv-grid.pre>*{animation:none;opacity:0}
+@media (max-width:860px){.rv-top,.rv-write-in{grid-template-columns:1fr}}
+.rate-stars{display:flex;justify-content:flex-end;width:fit-content}
+.rv-list::before{display:none}
+.rv-list{padding-bottom:clamp(40px,5vw,64px)}
