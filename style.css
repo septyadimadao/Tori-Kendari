@@ -432,3 +432,7 @@ footer{padding-bottom:0}
 #hitung{scroll-margin-top:72px}
 .steps-sec{background:transparent}
 .swash::after{background:var(--butter);opacity:.55}
+.fcols{grid-template-columns:minmax(0,320px) auto auto;justify-content:center;column-gap:clamp(36px,6vw,80px)}
+.fbrand-logo{gap:10px}
+@media (max-width:760px){.fcols{grid-template-columns:1fr 1fr;justify-content:stretch}}
+@media (max-width:460px){.fcols{grid-template-columns:1fr}}
