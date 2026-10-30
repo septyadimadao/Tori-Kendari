@@ -275,31 +275,9 @@ isi("#priceTable", el => {
   els.forEach(el => io.observe(el));
 })();
 
-/* sentuhan premium: progres scroll, partikel emas, sorotan kursor, transisi halaman */
+/* transisi halaman */
 (() => {
-  const bar = document.createElement("div"); bar.className = "progres"; document.body.appendChild(bar);
-  const ukur = () => { const h = document.documentElement.scrollHeight - innerHeight; bar.style.setProperty("--p", h > 0 ? scrollY / h : 0); };
-  addEventListener("scroll", ukur, {passive:true}); addEventListener("resize", ukur); ukur();
-
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  $$(".hero, .page-first").forEach(sec => {
-    const d = document.createElement("div"); d.className = "debu"; d.setAttribute("aria-hidden", "true");
-    for (let i = 0; i < 16; i++) {
-      const p = document.createElement("i");
-      p.style.cssText = `left:${Math.random()*100}%;--s:${2+Math.random()*3}px;--t:${8+Math.random()*8}s;--d:${-Math.random()*14}s;--x:${(Math.random()-.5)*120}px`;
-      d.appendChild(p);
-    }
-    sec.prepend(d);
-  });
-
-  addEventListener("pointermove", e => {
-    const c = e.target.closest?.(".feat,.info,.tip,.ex-card,.loc-card,.item");
-    if (!c) return;
-    const r = c.getBoundingClientRect();
-    c.style.setProperty("--mx", (e.clientX - r.left) + "px");
-    c.style.setProperty("--my", (e.clientY - r.top) + "px");
-  }, {passive:true});
-
   document.addEventListener("click", e => {
     const a = e.target.closest("a[href]");
     if (!a || a.target || e.metaKey || e.ctrlKey || e.shiftKey) return;
