@@ -467,4 +467,4 @@ footer{padding-bottom:0}
 .ribbon-track span::after{color:var(--rasp);font-size:.8em}
 .ribbon{border-top-color:var(--rasp)}
 #hitung{scroll-margin-top:72px}
-#hitung.builder{background:transparent}
+.steps-sec{background:transparent}
