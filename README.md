@@ -8,11 +8,11 @@ Setiap menu punya halaman sendiri dan selalu terbuka dari paling atas.
 |---|---|
 | `index.html` | Beranda: status buka/tutup (WITA), ilustrasi kue tori beranimasi, kartu menuju halaman lain |
 | `produk.html` | Semua produk dengan tombol +, plus tabel daftar harga |
-| `pesan.html` | Hitung pesanan per kemasan dan cara pesan |
+| `pesan.html` | Pengalihan lama ke `produk.html#hitung` (hitung pesanan kini ada di halaman Produk) |
 | `tentang.html` | Tentang kue tori dan tips menyimpan |
 | `lokasi.html` | Alamat, jam buka, WhatsApp, email |
 
-Kotak pesanan (tombol kanan bawah) ada di semua halaman dan isinya tetap terbawa saat pindah halaman. Header, footer dan kotak pesanan ada di setiap file HTML, jadi kalau mengubahnya, ubah di kelima file.
+Kotak pesanan (tombol kanan bawah) ada di semua halaman dan isinya tetap terbawa saat pindah halaman. Header, footer dan kotak pesanan ada di setiap file HTML, jadi kalau mengubahnya, ubah di keempat file utama.
 
 ## Data (bagian atas `app.js`)
 | Data | Isi sekarang | Lokasi |

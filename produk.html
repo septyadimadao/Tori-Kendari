@@ -101,7 +101,6 @@
     <nav class="links" aria-label="Navigasi utama">
       <a href="index.html" data-page="index">Beranda</a>
       <a href="produk.html" data-page="produk">Produk</a>
-      <a href="pesan.html" data-page="pesan">Hitung Pesanan</a>
       <a href="tentang.html" data-page="tentang">Tentang</a>
       <a href="lokasi.html" data-page="lokasi">Lokasi</a>
     </nav>
@@ -115,7 +114,7 @@
     </div>
   </div>
   <nav class="wrap mnav" id="mnav" aria-label="Menu ponsel">
-    <a href="index.html" data-page="index">Beranda</a><a href="produk.html" data-page="produk">Produk</a><a href="pesan.html" data-page="pesan">Hitung Pesanan</a><a href="tentang.html" data-page="tentang">Tentang</a><a href="lokasi.html" data-page="lokasi">Lokasi</a>
+    <a href="index.html" data-page="index">Beranda</a><a href="produk.html" data-page="produk">Produk</a><a href="tentang.html" data-page="tentang">Tentang</a><a href="lokasi.html" data-page="lokasi">Lokasi</a>
   </nav>
 </header>
 
@@ -140,10 +139,56 @@
       <span class="eyebrow">Daftar harga</span>
       <h2>Semua kemasan <span class="rasp">dalam satu tabel.</span></h2>
       <p class="lead">Semua kue tori diproduksi setiap hari. Untuk pesanan dalam jumlah banyak, sebaiknya pesan sehari sebelumnya lewat WhatsApp.</p>
-      <div class="ctas"><a class="btn btn-rasp" href="pesan.html">Hitung pesanan</a><a class="btn btn-ghost wa-link" href="#" target="_blank" rel="noopener">Tanya stok</a></div>
+      <div class="ctas"><a class="btn btn-rasp" href="#hitung">Hitung pesanan</a><a class="btn btn-ghost wa-link" href="#" target="_blank" rel="noopener">Tanya stok</a></div>
     </div>
     <div class="table-card">
       <table class="ptable"><thead><tr><th>Kemasan</th><th>Isi</th><th>Harga</th></tr></thead><tbody id="priceTable"></tbody></table>
+    </div>
+  </div>
+</section>
+<section class="builder" id="hitung">
+  <div class="wrap b-grid">
+    <div class="b-preview reveal" aria-hidden="true">
+      <span class="sum" id="bPrice">Rp 85.000</span>
+      <svg viewBox="0 0 120 120" class="b-cake" id="bArt"><use href="#i-kotak"/></svg>
+      <span class="b-weight" id="bWeight">1 kg</span>
+    </div>
+
+    <form class="b-form reveal" id="builder" novalidate>
+      <div class="sec-head" style="margin-bottom:0">
+      <span class="eyebrow">Hitung pesanan</span>
+        <h2>Butuh berapa <span class="rasp">banyak?</span></h2>
+        <p class="lead">Untuk arisan, syukuran, oleh-oleh atau stok camilan di rumah. Pilih kemasan dan jumlahnya, totalnya langsung terhitung.</p>
+      </div>
+      <fieldset>
+        <legend>Kemasan</legend>
+        <div class="opts" id="optKemasan"></div>
+      </fieldset>
+      <div class="field">
+        <label for="bJumlah">Jumlah kemasan</label>
+        <div class="qtyctl big">
+          <button type="button" id="bMin" aria-label="Kurangi jumlah">−</button>
+          <input id="bJumlah" type="number" min="1" max="200" value="1" inputmode="numeric">
+          <button type="button" id="bPlus" aria-label="Tambah jumlah">+</button>
+        </div>
+        <span class="hint">Untuk pesanan dalam jumlah banyak, sebaiknya pesan sehari sebelumnya.</span>
+      </div>
+      <div class="ctas">
+        <button class="btn btn-rasp" type="submit" id="bAdd">
+          <svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Masukkan ke kotak pesanan
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Cara pesan</span><h2>Tiga langkah, <span class="rasp">selesai.</span></h2></div>
+    <div class="steps reveal" aria-label="Cara memesan">
+      <div class="step"><h3>Pilih kemasan</h3><p>Tambahkan kemasan yang Anda mau ke kotak pesanan.</p></div>
+      <div class="step"><h3>Kirim lewat WhatsApp</h3><p>Isi nama dan tanggal, pesanan tersusun otomatis. Tinggal tekan kirim.</p></div>
+      <div class="step"><h3>Ambil atau diantar</h3><p>Kami konfirmasi total dan jadwal, lalu pesanan siap diambil atau diantar.</p></div>
     </div>
   </div>
 </section>
@@ -169,7 +214,7 @@
     </div>
     <div class="fcol">
       <h4>Jelajahi</h4>
-      <a href="index.html">Beranda</a><a href="produk.html">Produk</a><a href="pesan.html">Hitung Pesanan</a><a href="tentang.html">Tentang</a><a href="lokasi.html">Lokasi</a>
+      <a href="index.html">Beranda</a><a href="produk.html">Produk</a><a href="tentang.html">Tentang</a><a href="lokasi.html">Lokasi</a>
     </div>
     <div class="fcol">
       <h4>Kunjungi kami</h4>

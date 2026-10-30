@@ -466,3 +466,5 @@ footer{padding-bottom:0}
 .ribbon-track{font-family:"Cinzel",serif;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;align-items:center}
 .ribbon-track span::after{color:var(--rasp);font-size:.8em}
 .ribbon{border-top-color:var(--rasp)}
+#hitung{scroll-margin-top:72px}
+#hitung.builder{background:transparent}
