@@ -524,3 +524,5 @@ footer{padding-bottom:0}
 .rate-stars{display:flex;justify-content:flex-end;width:fit-content}
 .rv-list::before{display:none}
 .rv-list{padding-bottom:clamp(40px,5vw,64px)}
+/* tombol emas penuh sampai tepi */
+.btn-rasp{border-color:transparent;background-origin:border-box}
