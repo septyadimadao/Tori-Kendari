@@ -536,3 +536,5 @@ footer{padding-bottom:0}
 @keyframes denyutEmas{0%,100%{filter:brightness(1)}50%{filter:brightness(1.1) saturate(1.08)}}
 .btn-ghost:hover{background:rgba(217,174,91,.12)}
 @media (prefers-reduced-motion:reduce){.btn-rasp{animation:none}}
+/* ikon kartu melayang seirama */
+.feat .ico,.ex-card .ico{animation-delay:0s!important}
