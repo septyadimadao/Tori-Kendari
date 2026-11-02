@@ -526,3 +526,13 @@ footer{padding-bottom:0}
 .rv-list{padding-bottom:clamp(40px,5vw,64px)}
 /* tombol emas penuh sampai tepi */
 .btn-rasp{border-color:transparent;background-origin:border-box}
+/* ikon instagram di bawah nama brand */
+.fsoc{margin-top:0}
+.fbrand .fsoc{justify-content:flex-start}
+/* tombol emas lebih hidup: emas mengalir, kilap tepi, denyut cahaya */
+.btn-rasp{background:linear-gradient(115deg,#B8862F 0%,#E9C677 22%,#FFF1C4 38%,#D9AE5B 55%,#F2CF85 75%,#B8862F 100%);background-size:240% 100%;background-origin:border-box;animation:emasAlir 7s linear infinite,denyutEmas 2.8s ease-in-out infinite;box-shadow:inset 0 1px 0 rgba(255,250,230,.75),inset 0 -2px 6px rgba(110,70,15,.35),0 10px 26px -10px var(--rasp)}
+.btn-rasp:hover{box-shadow:inset 0 1px 0 rgba(255,250,230,.8),inset 0 -2px 6px rgba(110,70,15,.35),0 0 0 4px rgba(217,174,91,.22),0 14px 36px -8px rgba(246,222,159,.75)}
+@keyframes emasAlir{to{background-position:240% 0}}
+@keyframes denyutEmas{0%,100%{filter:brightness(1)}50%{filter:brightness(1.1) saturate(1.08)}}
+.btn-ghost:hover{background:rgba(217,174,91,.12)}
+@media (prefers-reduced-motion:reduce){.btn-rasp{animation:none}}
